@@ -99,7 +99,7 @@ export const Publications: React.FC<PublicationsProps> = ({
 
   return (
     <section id="publications" className="py-12 border-t border-rule dark:border-slate-800">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Navigation Tabs (al-folio style) */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-6 pb-2 border-b border-rule dark:border-slate-800 gap-4">
           <div className="flex items-center space-x-6">

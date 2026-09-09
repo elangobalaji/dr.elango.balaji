@@ -57,7 +57,7 @@ export const Contact: React.FC<ContactProps> = ({ profile, isDark }) => {
 
   return (
     <section id="contact" className="py-12 border-t border-rule dark:border-slate-800">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-xl font-bold tracking-tight text-ink dark:text-white mb-2">
           contact
         </h2>
