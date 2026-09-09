@@ -19,7 +19,7 @@ export const Footer: React.FC<FooterProps> = ({ profile, isDark, onOpenDeployGui
         isDark ? 'bg-slate-900 border-slate-800 text-slate-400' : 'bg-surface border-rule text-muted'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
         {/* al-folio classic copyright line */}
         <div className="text-center sm:text-left">
           <p>

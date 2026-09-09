@@ -60,7 +60,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           : 'bg-paper/80 border-b border-transparent'
       }`}
     >
-      <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Brand / Name on Left (al-folio style) */}
           <NavLink

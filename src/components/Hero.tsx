@@ -81,9 +81,9 @@ export const Hero: React.FC<HeroProps> = ({
 
   return (
     <section id="about" className="pt-24 pb-12 sm:pt-28 sm:pb-16">
-      <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Profile Card & Bio in al-folio layout */}
-        <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-start">
+        <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
           {/* Profile Sidebar / Card (al-folio style) */}
           <div className="w-full md:w-64 shrink-0 flex flex-col items-center md:items-start text-center md:text-left">
             {/* Scholar Avatar / Profile Picture */}

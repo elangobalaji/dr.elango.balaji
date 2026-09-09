@@ -17,7 +17,7 @@ export const Writing: React.FC<WritingProps> = ({ articles, isDark }) => {
         isDark ? 'bg-slate-950/60 border-slate-850' : 'bg-slate-50/50 border-rule'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Heading */}
         <div className="max-w-3xl mb-12">
           <div className="inline-flex items-center space-x-2 text-xs font-semibold uppercase tracking-wider text-indigo-600 dark:text-indigo-400 mb-2">

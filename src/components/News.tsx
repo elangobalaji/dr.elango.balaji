@@ -13,7 +13,7 @@ export const News: React.FC<NewsProps> = ({ news, isDark }) => {
 
   return (
     <section id="news" className="py-8 border-t border-rule dark:border-slate-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center space-x-2">
             <h2 className="text-xl font-bold tracking-tight text-ink dark:text-white">
