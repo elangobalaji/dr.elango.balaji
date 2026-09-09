@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   Mail,
   Phone,
@@ -10,9 +10,15 @@ import {
   Flame,
   FileText,
   ExternalLink,
+  Camera,
+  Upload,
+  Info,
+  Check,
+  RotateCcw,
+  X,
+  Folder,
 } from 'lucide-react';
 import { ProfileData } from '../types';
-import avatarImg from '../assets/images/academic_avatar_1788944034448.jpg';
 
 interface HeroProps {
   profile: ProfileData;
@@ -27,8 +33,51 @@ export const Hero: React.FC<HeroProps> = ({
   onOpenDeployGuide,
   onOpenResume,
 }) => {
-  const [imgSrc, setImgSrc] = useState<string>('./avatar.jpg');
+  const [imgSrc, setImgSrc] = useState<string>(() => {
+    return localStorage.getItem('academic_profile_photo') || './avatar-1.jpg';
+  });
+  const [triedFallback, setTriedFallback] = useState(false);
   const [hasImgError, setHasImgError] = useState(false);
+  const [showPhotoGuide, setShowPhotoGuide] = useState(false);
+  const [uploadSuccess, setUploadSuccess] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    const saved = localStorage.getItem('academic_profile_photo');
+    if (saved) {
+      setImgSrc(saved);
+      setHasImgError(false);
+    }
+  }, []);
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        const result = event.target?.result as string;
+        if (result) {
+          setImgSrc(result);
+          setHasImgError(false);
+          try {
+            localStorage.setItem('academic_profile_photo', result);
+          } catch (err) {
+            console.warn('Unable to store image in localStorage', err);
+          }
+          setUploadSuccess(true);
+          setTimeout(() => setUploadSuccess(false), 4000);
+        }
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const handleResetPhoto = () => {
+    localStorage.removeItem('academic_profile_photo');
+    setImgSrc('./avatar.jpg');
+    setTriedFallback(false);
+    setHasImgError(false);
+  };
 
   return (
     <section id="about" className="pt-24 pb-12 sm:pt-28 sm:pb-16">
@@ -38,9 +87,18 @@ export const Hero: React.FC<HeroProps> = ({
           {/* Profile Sidebar / Card (al-folio style) */}
           <div className="w-full md:w-64 shrink-0 flex flex-col items-center md:items-start text-center md:text-left">
             {/* Scholar Avatar / Profile Picture */}
-            <div className="relative group mb-4">
+            <div className="relative group mb-3">
+              <input
+                type="file"
+                ref={fileInputRef}
+                onChange={handleFileChange}
+                accept="image/*"
+                className="hidden"
+                id="avatar-upload-input"
+              />
+
               <div
-                className={`w-40 h-40 sm:w-48 sm:h-48 rounded-2xl p-1 shadow-md border transition-all duration-200 overflow-hidden ${
+                className={`w-44 h-56 sm:w-48 sm:h-64 rounded-2xl p-1 shadow-md border transition-all duration-200 overflow-hidden relative ${
                   isDark
                     ? 'bg-slate-800 border-slate-700 shadow-slate-950/50'
                     : 'bg-white border-slate-200 shadow-sm'
@@ -50,11 +108,12 @@ export const Hero: React.FC<HeroProps> = ({
                   <img
                     src={imgSrc}
                     alt="Elango Balaji T - Battery Research Scientist"
-                    className="w-full h-full object-contain rounded-xl"
+                    className="w-full h-full object-cover object-top rounded-xl"
                     referrerPolicy="no-referrer"
                     onError={() => {
-                      if (imgSrc !== avatarImg) {
-                        setImgSrc(avatarImg);
+                      if (!triedFallback && imgSrc !== './avatar.jpg') {
+                        setTriedFallback(true);
+                        setImgSrc('./avatar.jpg');
                       } else {
                         setHasImgError(true);
                       }
@@ -74,9 +133,75 @@ export const Hero: React.FC<HeroProps> = ({
                     <span className="text-[10px] uppercase font-mono tracking-widest text-slate-500 dark:text-slate-400 mt-1 z-10">
                       SEED · NTUST
                     </span>
+                    <button
+                      type="button"
+                      onClick={() => fileInputRef.current?.click()}
+                      className="mt-3 inline-flex items-center space-x-1 px-2.5 py-1 text-xs rounded bg-blue-600 text-white hover:bg-blue-700 transition-colors z-10 shadow-sm"
+                    >
+                      <Camera className="w-3.5 h-3.5" />
+                      <span>Select Photo</span>
+                    </button>
                   </div>
                 )}
+
+                {/* Upload Overlay Button on Hover */}
+                <div
+                  onClick={() => fileInputRef.current?.click()}
+                  className="absolute inset-0 bg-slate-900/60 backdrop-blur-xs opacity-0 group-hover:opacity-100 transition-opacity duration-200 rounded-xl flex flex-col items-center justify-center cursor-pointer text-white p-2"
+                  title="Click to select or change your photo"
+                >
+                  <Camera className="w-6 h-6 mb-1 text-blue-400" />
+                  <span className="text-xs font-medium">Change Photo</span>
+                  <span className="text-[10px] text-slate-300 mt-0.5">Click to choose file</span>
+                </div>
               </div>
+
+              {/* Upload Success Indicator */}
+              {uploadSuccess && (
+                <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-emerald-600 text-white text-[11px] px-2.5 py-0.5 rounded-full shadow-lg flex items-center space-x-1 whitespace-nowrap z-20 animate-fade-in">
+                  <Check className="w-3 h-3" />
+                  <span>Photo applied!</span>
+                </div>
+              )}
+            </div>
+
+            {/* Photo Action / Instruction Buttons */}
+            <div className="flex items-center space-x-2 mb-3">
+              <button
+                type="button"
+                onClick={() => fileInputRef.current?.click()}
+                className="inline-flex items-center space-x-1 text-[11px] text-blue-600 dark:text-blue-400 hover:underline font-medium"
+              >
+                <Upload className="w-3 h-3" />
+                <span>Upload Image</span>
+              </button>
+
+              <span className="text-slate-300 dark:text-slate-700">·</span>
+
+              <button
+                type="button"
+                onClick={() => setShowPhotoGuide(true)}
+                className="inline-flex items-center space-x-1 text-[11px] text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200"
+                title="View how to add photo to codebase permanently"
+              >
+                <Info className="w-3 h-3" />
+                <span>File Guide</span>
+              </button>
+
+              {localStorage.getItem('academic_profile_photo') && (
+                <>
+                  <span className="text-slate-300 dark:text-slate-700">·</span>
+                  <button
+                    type="button"
+                    onClick={handleResetPhoto}
+                    className="inline-flex items-center space-x-1 text-[11px] text-slate-400 hover:text-red-500"
+                    title="Reset to default"
+                  >
+                    <RotateCcw className="w-2.5 h-2.5" />
+                    <span>Reset</span>
+                  </button>
+                </>
+              )}
             </div>
 
             {/* Name & Academic Rank */}
@@ -240,6 +365,85 @@ export const Hero: React.FC<HeroProps> = ({
           </div>
         </div>
       </div>
+
+      {/* Photo Guide Modal */}
+      {showPhotoGuide && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs">
+          <div
+            className={`w-full max-w-lg rounded-xl border p-6 shadow-2xl relative ${
+              isDark
+                ? 'bg-slate-900 border-slate-700 text-slate-100'
+                : 'bg-white border-slate-200 text-slate-800'
+            }`}
+          >
+            <button
+              type="button"
+              onClick={() => setShowPhotoGuide(false)}
+              className="absolute top-4 right-4 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 p-1"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            <div className="flex items-center space-x-2.5 mb-4">
+              <div className="p-2 rounded-lg bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400">
+                <Camera className="w-5 h-5" />
+              </div>
+              <div>
+                <h3 className="text-base font-bold text-slate-900 dark:text-white">
+                  Profile Photo Guide
+                </h3>
+                <p className="text-xs text-slate-500 dark:text-slate-400">
+                  Two easy ways to use your exact photo
+                </p>
+              </div>
+            </div>
+
+            <div className="space-y-4 text-xs leading-relaxed">
+              <div className="p-3 rounded-lg border border-blue-200 dark:border-blue-900/60 bg-blue-50/50 dark:bg-blue-950/30">
+                <span className="font-semibold text-blue-700 dark:text-blue-300 block mb-1">
+                  Method 1: Instant In-Browser Upload (Active Now)
+                </span>
+                <p className="text-slate-700 dark:text-slate-300">
+                  Click the <strong>"Upload Image"</strong> button or click directly on your photo avatar frame. Select your original photo (<code className="font-mono text-[11px] bg-slate-200 dark:bg-slate-800 px-1 py-0.5 rounded">avatar-1.jpg</code> or any image file). It displays immediately at original quality and persists in your browser storage.
+                </p>
+              </div>
+
+              <div className="p-3 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-850">
+                <span className="font-semibold text-slate-900 dark:text-white block mb-1">
+                  Method 2: Permanent Codebase / GitHub Deployment
+                </span>
+                <p className="text-slate-700 dark:text-slate-300 mb-2">
+                  To ensure your photo is permanently stored in your Git repository and live for all visitors:
+                </p>
+                <ol className="list-decimal list-outside ml-4 space-y-1 text-slate-600 dark:text-slate-300">
+                  <li>
+                    Rename your image file to <code className="font-mono text-[11px] text-blue-600 dark:text-blue-400">avatar.jpg</code> (or <code className="font-mono text-[11px] text-blue-600 dark:text-blue-400">avatar-1.jpg</code>).
+                  </li>
+                  <li>
+                    Place it inside the <code className="font-mono text-[11px] font-semibold text-slate-900 dark:text-white">public/</code> directory of your project folder.
+                  </li>
+                  <li>
+                    Commit and push to GitHub:
+                    <pre className="font-mono text-[10px] bg-slate-900 text-slate-200 p-2 rounded mt-1 overflow-x-auto">
+git add public/avatar.jpg{"\n"}git commit -m "Add official profile photo"{"\n"}git push origin main
+                    </pre>
+                  </li>
+                </ol>
+              </div>
+            </div>
+
+            <div className="mt-5 flex justify-end">
+              <button
+                type="button"
+                onClick={() => setShowPhotoGuide(false)}
+                className="px-4 py-1.5 text-xs font-medium rounded-md bg-blue-600 text-white hover:bg-blue-700 transition-colors"
+              >
+                Got it
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
