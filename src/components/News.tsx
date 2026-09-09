@@ -12,11 +12,11 @@ export const News: React.FC<NewsProps> = ({ news, isDark }) => {
   const displayedNews = showAll ? news : news.slice(0, 4);
 
   return (
-    <section id="news" className="py-8 border-t border-slate-200 dark:border-slate-800">
+    <section id="news" className="py-8 border-t border-rule dark:border-slate-800">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center space-x-2">
-            <h2 className="text-xl font-bold tracking-tight text-slate-900 dark:text-white">
+            <h2 className="text-xl font-bold tracking-tight text-ink dark:text-white">
               news
             </h2>
           </div>
@@ -24,7 +24,7 @@ export const News: React.FC<NewsProps> = ({ news, isDark }) => {
           {news.length > 4 && (
             <button
               onClick={() => setShowAll(!showAll)}
-              className="text-xs font-semibold text-blue-600 dark:text-blue-400 hover:underline inline-flex items-center space-x-0.5"
+              className="text-xs font-semibold text-terracotta dark:text-blue-400 hover:underline inline-flex items-center space-x-0.5"
             >
               <span>{showAll ? 'show less' : 'view all announcements'}</span>
               <ChevronRight className="w-3.5 h-3.5" />
@@ -37,7 +37,7 @@ export const News: React.FC<NewsProps> = ({ news, isDark }) => {
           className={`rounded-lg border divide-y overflow-hidden text-sm ${
             isDark
               ? 'bg-slate-900/60 border-slate-800 divide-slate-800/80 text-slate-100'
-              : 'bg-white border-slate-200 divide-slate-100 text-slate-700'
+              : 'bg-surface border-rule divide-slate-100 text-slate-700'
           }`}
         >
           {displayedNews.map((item) => (
@@ -47,7 +47,7 @@ export const News: React.FC<NewsProps> = ({ news, isDark }) => {
             >
               {/* Date */}
               <div className="w-28 shrink-0 flex items-center space-x-2">
-                <span className="font-mono text-xs font-medium text-slate-500 dark:text-slate-400">
+                <span className="font-mono text-xs font-medium text-muted dark:text-slate-400">
                   {item.date}
                 </span>
                 {item.badge && (

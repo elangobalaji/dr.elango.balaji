@@ -14,7 +14,7 @@ export const Writing: React.FC<WritingProps> = ({ articles, isDark }) => {
     <section
       id="writing"
       className={`py-20 border-t ${
-        isDark ? 'bg-slate-950/60 border-slate-850' : 'bg-slate-50/50 border-slate-200'
+        isDark ? 'bg-slate-950/60 border-slate-850' : 'bg-slate-50/50 border-rule'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -26,11 +26,11 @@ export const Writing: React.FC<WritingProps> = ({ articles, isDark }) => {
           </div>
           <h2
             id="writing-section-heading"
-            className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 dark:text-white"
+            className="text-3xl sm:text-4xl font-bold tracking-tight text-ink dark:text-white"
           >
             Technical Writings & Perspectives
           </h2>
-          <p className="text-base text-slate-600 dark:text-slate-400 mt-2">
+          <p className="text-base text-ink-soft dark:text-slate-400 mt-2">
             Notes and reflections on software performance, systems design, developer tooling, and
             CI/CD infrastructure.
           </p>
@@ -44,11 +44,11 @@ export const Writing: React.FC<WritingProps> = ({ articles, isDark }) => {
               className={`p-6 rounded-xl border flex flex-col justify-between transition-all duration-200 hover:-translate-y-1 ${
                 isDark
                   ? 'bg-slate-900/80 border-slate-800 hover:border-slate-700'
-                  : 'bg-white border-slate-200 hover:border-slate-300 shadow-sm'
+                  : 'bg-surface border-rule hover:border-slate-300 shadow-sm'
               }`}
             >
               <div>
-                <div className="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 mb-3">
+                <div className="flex items-center justify-between text-xs text-muted dark:text-slate-400 mb-3">
                   <div className="flex items-center space-x-1.5">
                     <Calendar className="w-3.5 h-3.5" />
                     <span>{article.date}</span>
@@ -59,11 +59,11 @@ export const Writing: React.FC<WritingProps> = ({ articles, isDark }) => {
                   </div>
                 </div>
 
-                <h3 className="text-lg font-bold text-slate-900 dark:text-white tracking-tight leading-snug">
+                <h3 className="text-lg font-bold text-ink dark:text-white tracking-tight leading-snug">
                   {article.title}
                 </h3>
 
-                <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-2.5 line-clamp-3 leading-relaxed">
+                <p className="text-xs sm:text-sm text-ink-soft dark:text-slate-400 mt-2.5 line-clamp-3 leading-relaxed">
                   {article.excerpt}
                 </p>
               </div>
@@ -74,7 +74,7 @@ export const Writing: React.FC<WritingProps> = ({ articles, isDark }) => {
                     <span
                       key={tag}
                       className={`text-[10px] font-mono px-2 py-0.5 rounded ${
-                        isDark ? 'bg-slate-800 text-slate-400' : 'bg-slate-100 text-slate-600'
+                        isDark ? 'bg-slate-800 text-slate-400' : 'bg-slate-100 text-ink-soft'
                       }`}
                     >
                       #{tag}
@@ -105,7 +105,7 @@ export const Writing: React.FC<WritingProps> = ({ articles, isDark }) => {
             className={`relative w-full max-w-xl rounded-2xl border p-6 sm:p-8 shadow-2xl ${
               isDark
                 ? 'bg-slate-900 border-slate-700 text-slate-100'
-                : 'bg-white border-slate-200 text-slate-900'
+                : 'bg-surface border-rule text-ink'
             }`}
             onClick={(e) => e.stopPropagation()}
           >
@@ -124,7 +124,7 @@ export const Writing: React.FC<WritingProps> = ({ articles, isDark }) => {
               <span>{selectedArticle.readTime}</span>
             </div>
 
-            <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
+            <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-ink dark:text-white">
               {selectedArticle.title}
             </h3>
 
@@ -144,7 +144,7 @@ export const Writing: React.FC<WritingProps> = ({ articles, isDark }) => {
               ))}
             </div>
 
-            <div className="mt-6 pt-4 border-t border-slate-200 dark:border-slate-800 flex justify-end">
+            <div className="mt-6 pt-4 border-t border-rule dark:border-slate-800 flex justify-end">
               <button
                 onClick={() => setSelectedArticle(null)}
                 className="px-4 py-2 rounded-lg bg-indigo-600 text-white text-xs font-semibold hover:bg-indigo-500 transition-colors"

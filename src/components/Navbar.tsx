@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 import {
   Sun,
   Moon,
@@ -28,23 +29,10 @@ export const Navbar: React.FC<NavbarProps> = ({
 }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('about');
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 15);
-
-      const sections = ['about', 'news', 'research', 'publications', 'experience', 'skills', 'contact'];
-      for (const sectionId of sections) {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          if (rect.top <= 180 && rect.bottom >= 180) {
-            setActiveSection(sectionId);
-            break;
-          }
-        }
-      }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -52,13 +40,11 @@ export const Navbar: React.FC<NavbarProps> = ({
   }, []);
 
   const navLinks = [
-    { name: 'about', href: '#about' },
-    { name: 'news', href: '#news' },
-    { name: 'research', href: '#research' },
-    { name: 'publications', href: '#publications' },
-    { name: 'experience', href: '#experience' },
-    { name: 'skills', href: '#skills' },
-    { name: 'contact', href: '#contact' },
+    { name: 'about', href: '/' },
+    { name: 'research', href: '/research' },
+    { name: 'publications', href: '/publications' },
+    { name: 'experience', href: '/experience' },
+    { name: 'skills', href: '/skills' },
   ];
 
   return (
@@ -68,49 +54,48 @@ export const Navbar: React.FC<NavbarProps> = ({
         isScrolled
           ? isDark
             ? 'bg-slate-900/95 border-b border-slate-800 shadow-sm backdrop-blur-md'
-            : 'bg-white/95 border-b border-slate-200 shadow-xs backdrop-blur-md'
+            : 'bg-paper/95 border-b border-rule shadow-xs backdrop-blur-md'
           : isDark
           ? 'bg-slate-900/80 border-b border-transparent'
-          : 'bg-white/80 border-b border-transparent'
+          : 'bg-paper/80 border-b border-transparent'
       }`}
     >
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Brand / Name on Left (al-folio style) */}
-          <a
-            href="#about"
-            className="flex items-baseline space-x-2 text-slate-900 dark:text-white group"
+          <NavLink
+            to="/"
+            className="flex items-baseline space-x-2 text-ink dark:text-white group"
           >
-            <span className="font-bold text-lg tracking-tight group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+            <span className="font-display font-medium text-lg tracking-tight group-hover:text-terracotta dark:group-hover:text-terracotta transition-colors">
               {profile.name}
             </span>
-            <span className="text-xs text-slate-500 dark:text-slate-400 font-normal hidden sm:inline">
+            <span className="text-xs text-muted dark:text-slate-400 font-normal hidden sm:inline">
               / SEED Center, Taiwan Tech
             </span>
-          </a>
+          </NavLink>
 
           {/* Desktop Navigation Links (lowercase al-folio style) */}
           <nav className="hidden md:flex items-center space-x-1 sm:space-x-2 text-sm font-medium">
-            {navLinks.map((link) => {
-              const isActive = activeSection === link.name;
-              return (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className={`px-2.5 py-1.5 rounded-md transition-colors ${
+            {navLinks.map((link) => (
+              <NavLink
+                key={link.name}
+                to={link.href}
+                className={({ isActive }) =>
+                  `px-2.5 py-1.5 rounded-md transition-colors ${
                     isActive
                       ? isDark
-                        ? 'text-blue-400 font-semibold border-b-2 border-blue-400 rounded-b-none'
-                        : 'text-blue-600 font-semibold border-b-2 border-blue-600 rounded-b-none'
+                        ? 'text-orange-400 font-semibold border-b-2 border-orange-400 rounded-b-none'
+                        : 'text-terracotta font-semibold border-b-2 border-terracotta rounded-b-none'
                       : isDark
                       ? 'text-slate-300 hover:text-white'
-                      : 'text-slate-600 hover:text-slate-900'
-                  }`}
-                >
-                  {link.name}
-                </a>
-              );
-            })}
+                      : 'text-ink-soft hover:text-ink'
+                  }`
+                }
+              >
+                {link.name}
+              </NavLink>
+            ))}
 
             {/* CV / Resume Button */}
             <button
@@ -118,8 +103,8 @@ export const Navbar: React.FC<NavbarProps> = ({
               onClick={onOpenResume}
               className={`ml-2 inline-flex items-center space-x-1 px-2.5 py-1 rounded text-xs font-semibold border transition-all ${
                 isDark
-                  ? 'border-slate-700 bg-slate-800 text-slate-200 hover:border-blue-400 hover:text-blue-400'
-                  : 'border-slate-300 bg-slate-50 text-slate-700 hover:border-blue-600 hover:text-blue-600'
+                  ? 'border-slate-700 bg-slate-800 text-slate-200 hover:border-orange-400 hover:text-orange-400'
+                  : 'border-rule bg-surface text-ink-soft hover:border-terracotta hover:text-terracotta'
               }`}
               title="Curriculum Vitae"
             >
@@ -134,7 +119,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               className={`inline-flex items-center space-x-1 px-2.5 py-1 rounded text-xs font-semibold border transition-all ${
                 isDark
                   ? 'border-slate-700 text-slate-300 hover:text-emerald-400 hover:border-emerald-500'
-                  : 'border-slate-300 text-slate-600 hover:text-emerald-600 hover:border-emerald-500'
+                  : 'border-rule text-ink-soft hover:text-emerald-600 hover:border-emerald-500'
               }`}
               title="GitHub Hosting Instructions"
             >
@@ -146,11 +131,11 @@ export const Navbar: React.FC<NavbarProps> = ({
             <button
               id="navbar-theme-toggle"
               onClick={onToggleTheme}
-              className={`p-1.5 rounded-md text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors ml-1`}
+              className={`p-1.5 rounded-md text-muted hover:text-ink dark:text-slate-400 dark:hover:text-white transition-colors ml-1`}
               aria-label="Toggle dark/light mode"
               title={isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
             >
-              {isDark ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-slate-600" />}
+              {isDark ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-muted" />}
             </button>
           </nav>
 
@@ -158,7 +143,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           <div className="flex items-center md:hidden space-x-2">
             <button
               onClick={onToggleTheme}
-              className="p-1.5 text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
+              className="p-1.5 text-muted hover:text-ink dark:text-slate-400 dark:hover:text-white"
               aria-label="Toggle theme"
             >
               {isDark ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4" />}
@@ -167,7 +152,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             <button
               id="navbar-mobile-menu-btn"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-1.5 rounded-md text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
+              className="p-1.5 rounded-md text-ink-soft dark:text-slate-300 hover:bg-surface dark:hover:bg-slate-800"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -180,26 +165,26 @@ export const Navbar: React.FC<NavbarProps> = ({
       {mobileMenuOpen && (
         <div
           className={`md:hidden border-b px-4 pt-2 pb-4 space-y-1 shadow-lg ${
-            isDark ? 'bg-slate-900 border-slate-800' : 'bg-white border-slate-200'
+            isDark ? 'bg-slate-900 border-slate-800' : 'bg-paper border-rule'
           }`}
         >
           {navLinks.map((link) => (
-            <a
+            <NavLink
               key={link.name}
-              href={link.href}
+              to={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="block px-3 py-2 rounded-md text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800"
+              className="block px-3 py-2 rounded-md text-sm font-medium text-ink-soft dark:text-slate-200 hover:bg-surface dark:hover:bg-slate-800"
             >
               {link.name}
-            </a>
+            </NavLink>
           ))}
-          <div className="pt-2 flex items-center space-x-2 border-t border-slate-200 dark:border-slate-800">
+          <div className="pt-2 flex items-center space-x-2 border-t border-rule dark:border-slate-800">
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
                 onOpenResume();
               }}
-              className="flex-1 text-center py-2 rounded border text-xs font-semibold text-blue-600 dark:text-blue-400"
+              className="flex-1 text-center py-2 rounded border text-xs font-semibold text-terracotta dark:text-orange-400 border-rule dark:border-slate-700"
             >
               Curriculum Vitae (PDF)
             </button>
@@ -208,7 +193,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 setMobileMenuOpen(false);
                 onOpenDeployGuide();
               }}
-              className="flex-1 text-center py-2 rounded border text-xs font-semibold text-emerald-600 dark:text-emerald-400"
+              className="flex-1 text-center py-2 rounded border text-xs font-semibold text-emerald-600 dark:text-emerald-400 border-rule dark:border-slate-700"
             >
               GitHub Pages Guide
             </button>

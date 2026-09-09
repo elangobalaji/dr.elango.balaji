@@ -101,7 +101,7 @@ export const Hero: React.FC<HeroProps> = ({
                 className={`w-44 h-56 sm:w-48 sm:h-64 rounded-2xl p-1 shadow-md border transition-all duration-200 overflow-hidden relative ${
                   isDark
                     ? 'bg-slate-800 border-slate-700 shadow-slate-950/50'
-                    : 'bg-white border-slate-200 shadow-sm'
+                    : 'bg-surface border-rule shadow-sm'
                 }`}
               >
                 {!hasImgError ? (
@@ -124,19 +124,19 @@ export const Hero: React.FC<HeroProps> = ({
                     className={`w-full h-full rounded-xl flex flex-col items-center justify-center relative overflow-hidden ${
                       isDark
                         ? 'bg-gradient-to-br from-slate-900 to-slate-800 text-slate-200'
-                        : 'bg-gradient-to-br from-slate-100 to-slate-200 text-slate-800'
+                        : 'bg-gradient-to-br from-slate-100 to-slate-200 text-ink'
                     }`}
                   >
-                    <span className="text-4xl sm:text-5xl font-extrabold tracking-tight font-mono text-blue-600 dark:text-blue-400 z-10">
+                    <span className="text-4xl sm:text-5xl font-extrabold tracking-tight font-mono text-terracotta dark:text-blue-400 z-10">
                       EB
                     </span>
-                    <span className="text-[10px] uppercase font-mono tracking-widest text-slate-500 dark:text-slate-400 mt-1 z-10">
+                    <span className="text-[10px] uppercase font-mono tracking-widest text-muted dark:text-slate-400 mt-1 z-10">
                       SEED · NTUST
                     </span>
                     <button
                       type="button"
                       onClick={() => fileInputRef.current?.click()}
-                      className="mt-3 inline-flex items-center space-x-1 px-2.5 py-1 text-xs rounded bg-blue-600 text-white hover:bg-blue-700 transition-colors z-10 shadow-sm"
+                      className="mt-3 inline-flex items-center space-x-1 px-2.5 py-1 text-xs rounded bg-terracotta text-white hover:bg-terracotta-hover transition-colors z-10 shadow-sm"
                     >
                       <Camera className="w-3.5 h-3.5" />
                       <span>Select Photo</span>
@@ -170,7 +170,7 @@ export const Hero: React.FC<HeroProps> = ({
               <button
                 type="button"
                 onClick={() => fileInputRef.current?.click()}
-                className="inline-flex items-center space-x-1 text-[11px] text-blue-600 dark:text-blue-400 hover:underline font-medium"
+                className="inline-flex items-center space-x-1 text-[11px] text-terracotta dark:text-blue-400 hover:underline font-medium"
               >
                 <Upload className="w-3 h-3" />
                 <span>Upload Image</span>
@@ -181,7 +181,7 @@ export const Hero: React.FC<HeroProps> = ({
               <button
                 type="button"
                 onClick={() => setShowPhotoGuide(true)}
-                className="inline-flex items-center space-x-1 text-[11px] text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200"
+                className="inline-flex items-center space-x-1 text-[11px] text-muted hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200"
                 title="View how to add photo to codebase permanently"
               >
                 <Info className="w-3 h-3" />
@@ -205,16 +205,16 @@ export const Hero: React.FC<HeroProps> = ({
             </div>
 
             {/* Name & Academic Rank */}
-            <h1 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
+            <h1 className="text-2xl font-bold tracking-tight text-ink dark:text-white">
               {profile.name}
             </h1>
-            <p className="text-sm font-medium text-blue-600 dark:text-blue-400 mt-0.5">
+            <p className="text-sm font-medium text-terracotta dark:text-blue-400 mt-0.5">
               {profile.title}
             </p>
-            <p className="text-xs text-slate-600 dark:text-slate-300 mt-1">
+            <p className="text-xs text-ink-soft dark:text-slate-300 mt-1">
               Ph.D. Candidate (Expected July 2026)
             </p>
-            <p className="text-xs text-slate-500 dark:text-slate-400">
+            <p className="text-xs text-muted dark:text-slate-400">
               SEED Center, Taiwan Tech
             </p>
 
@@ -226,7 +226,7 @@ export const Hero: React.FC<HeroProps> = ({
                 title="Email"
                 aria-label="Email"
               >
-                <Mail className="w-3 h-3 text-slate-500 dark:text-slate-300" />
+                <Mail className="w-3 h-3 text-muted dark:text-slate-300" />
                 <span>email</span>
               </a>
 
@@ -238,7 +238,7 @@ export const Hero: React.FC<HeroProps> = ({
                 title="Google Scholar"
                 aria-label="Google Scholar"
               >
-                <BookOpen className="w-3 h-3 text-blue-500 dark:text-blue-400" />
+                <BookOpen className="w-3 h-3 text-terracotta dark:text-blue-400" />
                 <span>scholar</span>
               </a>
 
@@ -262,7 +262,7 @@ export const Hero: React.FC<HeroProps> = ({
                 title="LinkedIn"
                 aria-label="LinkedIn"
               >
-                <Linkedin className="w-3 h-3 text-blue-600 dark:text-blue-400" />
+                <Linkedin className="w-3 h-3 text-terracotta dark:text-blue-400" />
                 <span>linkedin</span>
               </a>
 
@@ -278,17 +278,17 @@ export const Hero: React.FC<HeroProps> = ({
             </div>
 
             {/* Location */}
-            <div className="mt-3 flex items-center space-x-1.5 text-xs text-slate-500 dark:text-slate-400">
+            <div className="mt-3 flex items-center space-x-1.5 text-xs text-muted dark:text-slate-400">
               <MapPin className="w-3.5 h-3.5 shrink-0 text-slate-400" />
               <span>Taipei, Taiwan (UTC+8)</span>
             </div>
           </div>
 
           {/* Bio & Academic Mission (al-folio main column) */}
-          <div className="flex-1 space-y-4 text-slate-800 dark:text-slate-100">
+          <div className="flex-1 space-y-4 text-ink dark:text-slate-100">
             <div className="space-y-3 text-base leading-relaxed">
               <p>
-                I am a <strong className="text-slate-900 dark:text-white font-semibold">Battery Research Scientist</strong> and doctoral candidate at the{' '}
+                I am a <strong className="text-ink dark:text-white font-semibold">Battery Research Scientist</strong> and doctoral candidate at the{' '}
                 <a
                   href="https://seed.ntust.edu.tw"
                   target="_blank"
@@ -298,33 +298,33 @@ export const Hero: React.FC<HeroProps> = ({
                   Sustainable Energy Development (SEED) Center
                 </a>
                 , Department of Chemical Engineering,{' '}
-                <strong className="text-slate-900 dark:text-white font-semibold">National Taiwan University of Science and Technology (Taiwan Tech)</strong>,
-                under the supervision of <strong className="text-slate-900 dark:text-white font-semibold">Prof. Bing Joe Hwang</strong> (National Chair Professor).
+                <strong className="text-ink dark:text-white font-semibold">National Taiwan University of Science and Technology (Taiwan Tech)</strong>,
+                under the supervision of <strong className="text-ink dark:text-white font-semibold">Prof. Bing Joe Hwang</strong> (National Chair Professor).
               </p>
 
               <p className="text-slate-700 dark:text-slate-200 text-sm sm:text-base leading-relaxed">
                 My research centers on diagnosing degradation pathways and investigating catalytic
-                interactions within <strong className="text-slate-900 dark:text-white font-semibold">Li₂S composite cathodes</strong> in Lithium–Sulfur (Li-S)
+                interactions within <strong className="text-ink dark:text-white font-semibold">Li₂S composite cathodes</strong> in Lithium–Sulfur (Li-S)
                 batteries via multimodal <em>in-situ</em> and <em>operando</em> imaging and spectroscopy.
-                I utilize synchrotron-based <strong className="text-slate-900 dark:text-white font-semibold">Transmission X-ray Microscopy (TXM)</strong>,{' '}
-                <strong className="text-slate-900 dark:text-white font-semibold">High-Resolution X-ray Diffraction (HR-XRD)</strong>, and{' '}
-                <strong className="text-slate-900 dark:text-white font-semibold">X-ray Absorption Spectroscopy (XAS)</strong> at the National Synchrotron Radiation
+                I utilize synchrotron-based <strong className="text-ink dark:text-white font-semibold">Transmission X-ray Microscopy (TXM)</strong>,{' '}
+                <strong className="text-ink dark:text-white font-semibold">High-Resolution X-ray Diffraction (HR-XRD)</strong>, and{' '}
+                <strong className="text-ink dark:text-white font-semibold">X-ray Absorption Spectroscopy (XAS)</strong> at the National Synchrotron Radiation
                 Research Center (NSRRC) beamlines TLS-16A and TPS-32A, coupled with Confocal Optical
                 Microscopy/Raman and isothermal calorimetry.
               </p>
 
               <p className="text-slate-700 dark:text-slate-200 text-sm sm:text-base leading-relaxed">
-                To date, I have authored and co-authored <strong className="text-slate-900 dark:text-white font-semibold">20 publications (950+ citations)</strong> in
+                To date, I have authored and co-authored <strong className="text-ink dark:text-white font-semibold">20 publications (950+ citations)</strong> in
                 high-impact journals, including <em>ACS Energy Letters</em>, <em>Nature Reviews Clean Technology</em>,{' '}
                 <em>Advanced Functional Materials</em>, and a manuscript under revision at the{' '}
                 <em>Journal of the American Chemical Society (JACS)</em>. I have also contributed strategically to
-                securing over <strong className="text-slate-900 dark:text-white font-semibold">NT$ 150M (~€4M)</strong> in national and bilateral research grants.
+                securing over <strong className="text-ink dark:text-white font-semibold">NT$ 150M (~€4M)</strong> in national and bilateral research grants.
               </p>
 
               <p className="text-slate-700 dark:text-slate-200 text-sm sm:text-base leading-relaxed">
                 In addition to laboratory and synchrotron diagnostics, I formulate{' '}
-                <strong className="text-slate-900 dark:text-white font-semibold">machine learning frameworks for battery safety</strong> and thermal runaway
-                prediction, and craft publication-grade <strong className="text-slate-900 dark:text-white font-semibold">3D scientific visualizations and animations in Blender</strong>.
+                <strong className="text-ink dark:text-white font-semibold">machine learning frameworks for battery safety</strong> and thermal runaway
+                prediction, and craft publication-grade <strong className="text-ink dark:text-white font-semibold">3D scientific visualizations and animations in Blender</strong>.
               </p>
             </div>
 
@@ -333,21 +333,21 @@ export const Hero: React.FC<HeroProps> = ({
               className={`p-3.5 rounded-lg border text-xs leading-relaxed ${
                 isDark
                   ? 'bg-slate-800/80 border-slate-700 text-slate-200'
-                  : 'bg-slate-50 border-slate-200 text-slate-700'
+                  : 'bg-slate-50 border-rule text-slate-700'
               }`}
             >
-              <span className="font-semibold text-slate-900 dark:text-white">
+              <span className="font-semibold text-ink dark:text-white">
                 International Advisory & Collaboration:{' '}
               </span>
               Internationally advised and mentored through collaborative projects by{' '}
-              <strong className="text-slate-900 dark:text-white font-semibold">Prof. Martin Winter</strong> (MEET Battery Research Center, University of Münster, Germany),{' '}
-              <strong className="text-slate-900 dark:text-white font-semibold">Prof. A. Manthiram</strong> (University of Texas at Austin), and{' '}
-              <strong className="text-slate-900 dark:text-white font-semibold">Prof. Hongjie Dai</strong> (Stanford University).
+              <strong className="text-ink dark:text-white font-semibold">Prof. Martin Winter</strong> (MEET Battery Research Center, University of Münster, Germany),{' '}
+              <strong className="text-ink dark:text-white font-semibold">Prof. A. Manthiram</strong> (University of Texas at Austin), and{' '}
+              <strong className="text-ink dark:text-white font-semibold">Prof. Hongjie Dai</strong> (Stanford University).
             </div>
 
             {/* Quick Metrics Bar (al-folio academic badges) */}
             <div className="pt-2 flex flex-wrap gap-2 text-xs">
-              <span className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full font-medium bg-blue-50 dark:bg-blue-950/70 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800">
+              <span className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full font-medium bg-orange-50 dark:bg-blue-950/70 text-blue-700 dark:text-blue-300 border border-orange-200 dark:border-blue-800">
                 <BookOpen className="w-3.5 h-3.5" />
                 <span>20 Publications · 950+ Citations</span>
               </span>
@@ -373,33 +373,33 @@ export const Hero: React.FC<HeroProps> = ({
             className={`w-full max-w-lg rounded-xl border p-6 shadow-2xl relative ${
               isDark
                 ? 'bg-slate-900 border-slate-700 text-slate-100'
-                : 'bg-white border-slate-200 text-slate-800'
+                : 'bg-surface border-rule text-ink'
             }`}
           >
             <button
               type="button"
               onClick={() => setShowPhotoGuide(false)}
-              className="absolute top-4 right-4 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 p-1"
+              className="absolute top-4 right-4 text-slate-400 hover:text-ink-soft dark:hover:text-slate-200 p-1"
             >
               <X className="w-5 h-5" />
             </button>
 
             <div className="flex items-center space-x-2.5 mb-4">
-              <div className="p-2 rounded-lg bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400">
+              <div className="p-2 rounded-lg bg-orange-50 dark:bg-blue-950/60 text-terracotta dark:text-blue-400">
                 <Camera className="w-5 h-5" />
               </div>
               <div>
-                <h3 className="text-base font-bold text-slate-900 dark:text-white">
+                <h3 className="text-base font-bold text-ink dark:text-white">
                   Profile Photo Guide
                 </h3>
-                <p className="text-xs text-slate-500 dark:text-slate-400">
+                <p className="text-xs text-muted dark:text-slate-400">
                   Two easy ways to use your exact photo
                 </p>
               </div>
             </div>
 
             <div className="space-y-4 text-xs leading-relaxed">
-              <div className="p-3 rounded-lg border border-blue-200 dark:border-blue-900/60 bg-blue-50/50 dark:bg-blue-950/30">
+              <div className="p-3 rounded-lg border border-orange-200 dark:border-blue-900/60 bg-orange-50/50 dark:bg-blue-950/30">
                 <span className="font-semibold text-blue-700 dark:text-blue-300 block mb-1">
                   Method 1: Instant In-Browser Upload (Active Now)
                 </span>
@@ -408,19 +408,19 @@ export const Hero: React.FC<HeroProps> = ({
                 </p>
               </div>
 
-              <div className="p-3 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-850">
-                <span className="font-semibold text-slate-900 dark:text-white block mb-1">
+              <div className="p-3 rounded-lg border border-rule dark:border-slate-800 bg-slate-50 dark:bg-slate-850">
+                <span className="font-semibold text-ink dark:text-white block mb-1">
                   Method 2: Permanent Codebase / GitHub Deployment
                 </span>
                 <p className="text-slate-700 dark:text-slate-300 mb-2">
                   To ensure your photo is permanently stored in your Git repository and live for all visitors:
                 </p>
-                <ol className="list-decimal list-outside ml-4 space-y-1 text-slate-600 dark:text-slate-300">
+                <ol className="list-decimal list-outside ml-4 space-y-1 text-ink-soft dark:text-slate-300">
                   <li>
-                    Rename your image file to <code className="font-mono text-[11px] text-blue-600 dark:text-blue-400">avatar.jpg</code> (or <code className="font-mono text-[11px] text-blue-600 dark:text-blue-400">avatar-1.jpg</code>).
+                    Rename your image file to <code className="font-mono text-[11px] text-terracotta dark:text-blue-400">avatar.jpg</code> (or <code className="font-mono text-[11px] text-terracotta dark:text-blue-400">avatar-1.jpg</code>).
                   </li>
                   <li>
-                    Place it inside the <code className="font-mono text-[11px] font-semibold text-slate-900 dark:text-white">public/</code> directory of your project folder.
+                    Place it inside the <code className="font-mono text-[11px] font-semibold text-ink dark:text-white">public/</code> directory of your project folder.
                   </li>
                   <li>
                     Commit and push to GitHub:
@@ -436,7 +436,7 @@ git add public/avatar.jpg{"\n"}git commit -m "Add official profile photo"{"\n"}g
               <button
                 type="button"
                 onClick={() => setShowPhotoGuide(false)}
-                className="px-4 py-1.5 text-xs font-medium rounded-md bg-blue-600 text-white hover:bg-blue-700 transition-colors"
+                className="px-4 py-1.5 text-xs font-medium rounded-md bg-terracotta text-white hover:bg-terracotta-hover transition-colors"
               >
                 Got it
               </button>

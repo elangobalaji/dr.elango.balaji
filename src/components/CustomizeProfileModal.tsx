@@ -73,7 +73,7 @@ export const CustomizeProfileModal: React.FC<CustomizeProfileModalProps> = ({
         className={`relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-2xl border p-6 sm:p-8 shadow-2xl ${
           isDark
             ? 'bg-slate-900 border-slate-750 text-slate-100'
-            : 'bg-white border-slate-200 text-slate-900'
+            : 'bg-surface border-rule text-ink'
         }`}
         onClick={(e) => e.stopPropagation()}
       >
@@ -83,7 +83,7 @@ export const CustomizeProfileModal: React.FC<CustomizeProfileModalProps> = ({
           className={`absolute top-5 right-5 p-2 rounded-full transition-colors ${
             isDark
               ? 'text-slate-400 hover:text-white hover:bg-slate-800'
-              : 'text-slate-500 hover:text-slate-900 hover:bg-slate-100'
+              : 'text-muted hover:text-ink hover:bg-slate-100'
           }`}
           aria-label="Close modal"
         >
@@ -98,13 +98,13 @@ export const CustomizeProfileModal: React.FC<CustomizeProfileModalProps> = ({
             <span className="text-xs font-semibold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">
               In-Browser Personalizer
             </span>
-            <h3 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
+            <h3 className="text-2xl font-bold tracking-tight text-ink dark:text-white">
               Customize Your Portfolio
             </h3>
           </div>
         </div>
 
-        <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1 leading-relaxed">
+        <p className="text-xs sm:text-sm text-ink-soft dark:text-slate-400 mt-1 leading-relaxed">
           Update your personal details below to customize this portfolio immediately. Changes are
           stored in your browser session.
         </p>
@@ -112,7 +112,7 @@ export const CustomizeProfileModal: React.FC<CustomizeProfileModalProps> = ({
         <form onSubmit={handleSubmit} className="mt-6 space-y-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1">
+              <label className="block text-xs font-semibold uppercase tracking-wider text-muted dark:text-slate-400 mb-1">
                 Full Name
               </label>
               <input
@@ -122,13 +122,13 @@ export const CustomizeProfileModal: React.FC<CustomizeProfileModalProps> = ({
                 className={`w-full px-3 py-2 rounded-xl text-sm border focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
                   isDark
                     ? 'bg-slate-950 border-slate-800 text-white'
-                    : 'bg-slate-50 border-slate-200 text-slate-900'
+                    : 'bg-slate-50 border-rule text-ink'
                 }`}
               />
             </div>
 
             <div>
-              <label className="block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1">
+              <label className="block text-xs font-semibold uppercase tracking-wider text-muted dark:text-slate-400 mb-1">
                 Professional Title
               </label>
               <input
@@ -138,14 +138,14 @@ export const CustomizeProfileModal: React.FC<CustomizeProfileModalProps> = ({
                 className={`w-full px-3 py-2 rounded-xl text-sm border focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
                   isDark
                     ? 'bg-slate-950 border-slate-800 text-white'
-                    : 'bg-slate-50 border-slate-200 text-slate-900'
+                    : 'bg-slate-50 border-rule text-ink'
                 }`}
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1">
+            <label className="block text-xs font-semibold uppercase tracking-wider text-muted dark:text-slate-400 mb-1">
               Hero Tagline
             </label>
             <input
@@ -155,14 +155,14 @@ export const CustomizeProfileModal: React.FC<CustomizeProfileModalProps> = ({
               className={`w-full px-3 py-2 rounded-xl text-sm border focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
                 isDark
                   ? 'bg-slate-950 border-slate-800 text-white'
-                  : 'bg-slate-50 border-slate-200 text-slate-900'
+                  : 'bg-slate-50 border-rule text-ink'
               }`}
             />
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1">
+              <label className="block text-xs font-semibold uppercase tracking-wider text-muted dark:text-slate-400 mb-1">
                 Location
               </label>
               <input
@@ -172,13 +172,13 @@ export const CustomizeProfileModal: React.FC<CustomizeProfileModalProps> = ({
                 className={`w-full px-3 py-2 rounded-xl text-sm border focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
                   isDark
                     ? 'bg-slate-950 border-slate-800 text-white'
-                    : 'bg-slate-50 border-slate-200 text-slate-900'
+                    : 'bg-slate-50 border-rule text-ink'
                 }`}
               />
             </div>
 
             <div>
-              <label className="block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1">
+              <label className="block text-xs font-semibold uppercase tracking-wider text-muted dark:text-slate-400 mb-1">
                 Current Status Badge
               </label>
               <input
@@ -188,7 +188,7 @@ export const CustomizeProfileModal: React.FC<CustomizeProfileModalProps> = ({
                 className={`w-full px-3 py-2 rounded-xl text-sm border focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
                   isDark
                     ? 'bg-slate-950 border-slate-800 text-white'
-                    : 'bg-slate-50 border-slate-200 text-slate-900'
+                    : 'bg-slate-50 border-rule text-ink'
                 }`}
               />
             </div>
@@ -196,7 +196,7 @@ export const CustomizeProfileModal: React.FC<CustomizeProfileModalProps> = ({
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1">
+              <label className="block text-xs font-semibold uppercase tracking-wider text-muted dark:text-slate-400 mb-1">
                 Email Address
               </label>
               <input
@@ -211,13 +211,13 @@ export const CustomizeProfileModal: React.FC<CustomizeProfileModalProps> = ({
                 className={`w-full px-3 py-2 rounded-xl text-sm border focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
                   isDark
                     ? 'bg-slate-950 border-slate-800 text-white'
-                    : 'bg-slate-50 border-slate-200 text-slate-900'
+                    : 'bg-slate-50 border-rule text-ink'
                 }`}
               />
             </div>
 
             <div>
-              <label className="block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1">
+              <label className="block text-xs font-semibold uppercase tracking-wider text-muted dark:text-slate-400 mb-1">
                 GitHub Profile URL
               </label>
               <input
@@ -232,7 +232,7 @@ export const CustomizeProfileModal: React.FC<CustomizeProfileModalProps> = ({
                 className={`w-full px-3 py-2 rounded-xl text-sm border focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
                   isDark
                     ? 'bg-slate-950 border-slate-800 text-white'
-                    : 'bg-slate-50 border-slate-200 text-slate-900'
+                    : 'bg-slate-50 border-rule text-ink'
                 }`}
               />
             </div>
@@ -240,7 +240,7 @@ export const CustomizeProfileModal: React.FC<CustomizeProfileModalProps> = ({
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1">
+              <label className="block text-xs font-semibold uppercase tracking-wider text-muted dark:text-slate-400 mb-1">
                 LinkedIn URL
               </label>
               <input
@@ -255,13 +255,13 @@ export const CustomizeProfileModal: React.FC<CustomizeProfileModalProps> = ({
                 className={`w-full px-3 py-2 rounded-xl text-sm border focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
                   isDark
                     ? 'bg-slate-950 border-slate-800 text-white'
-                    : 'bg-slate-50 border-slate-200 text-slate-900'
+                    : 'bg-slate-50 border-rule text-ink'
                 }`}
               />
             </div>
 
             <div>
-              <label className="block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1">
+              <label className="block text-xs font-semibold uppercase tracking-wider text-muted dark:text-slate-400 mb-1">
                 Twitter / X URL
               </label>
               <input
@@ -276,14 +276,14 @@ export const CustomizeProfileModal: React.FC<CustomizeProfileModalProps> = ({
                 className={`w-full px-3 py-2 rounded-xl text-sm border focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
                   isDark
                     ? 'bg-slate-950 border-slate-800 text-white'
-                    : 'bg-slate-50 border-slate-200 text-slate-900'
+                    : 'bg-slate-50 border-rule text-ink'
                 }`}
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1">
+            <label className="block text-xs font-semibold uppercase tracking-wider text-muted dark:text-slate-400 mb-1">
               Short Bio
             </label>
             <textarea
@@ -293,12 +293,12 @@ export const CustomizeProfileModal: React.FC<CustomizeProfileModalProps> = ({
               className={`w-full px-3 py-2 rounded-xl text-sm border focus:outline-none focus:ring-2 focus:ring-indigo-500 resize-none ${
                 isDark
                   ? 'bg-slate-950 border-slate-800 text-white'
-                  : 'bg-slate-50 border-slate-200 text-slate-900'
+                  : 'bg-slate-50 border-rule text-ink'
               }`}
             />
           </div>
 
-          <div className="pt-4 border-t border-slate-200 dark:border-slate-800 flex flex-wrap items-center justify-between gap-3">
+          <div className="pt-4 border-t border-rule dark:border-slate-800 flex flex-wrap items-center justify-between gap-3">
             <div className="flex items-center space-x-2">
               <button
                 type="button"
@@ -312,7 +312,7 @@ export const CustomizeProfileModal: React.FC<CustomizeProfileModalProps> = ({
               <button
                 type="button"
                 onClick={handleExportJSON}
-                className="inline-flex items-center space-x-1.5 px-3 py-2 rounded-lg text-xs font-medium border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                className="inline-flex items-center space-x-1.5 px-3 py-2 rounded-lg text-xs font-medium border border-rule dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
               >
                 <Download className="w-3.5 h-3.5" />
                 <span>Export JSON</span>
@@ -323,7 +323,7 @@ export const CustomizeProfileModal: React.FC<CustomizeProfileModalProps> = ({
               <button
                 type="button"
                 onClick={onClose}
-                className="px-4 py-2 rounded-lg text-xs font-medium border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800"
+                className="px-4 py-2 rounded-lg text-xs font-medium border border-rule dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800"
               >
                 Cancel
               </button>

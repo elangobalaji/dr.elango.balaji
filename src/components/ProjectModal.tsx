@@ -38,7 +38,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, is
         className={`relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-2xl border p-6 sm:p-8 shadow-2xl transition-all ${
           isDark
             ? 'bg-slate-900 border-slate-700 text-slate-100'
-            : 'bg-white border-slate-200 text-slate-900'
+            : 'bg-surface border-rule text-ink'
         }`}
         onClick={(e) => e.stopPropagation()}
       >
@@ -49,7 +49,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, is
           className={`absolute top-5 right-5 p-2 rounded-full transition-colors ${
             isDark
               ? 'text-slate-400 hover:text-white hover:bg-slate-800'
-              : 'text-slate-500 hover:text-slate-900 hover:bg-slate-100'
+              : 'text-muted hover:text-ink hover:bg-slate-100'
           }`}
           aria-label="Close modal"
         >
@@ -70,7 +70,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, is
         </div>
 
         {/* Title & Tagline */}
-        <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 dark:text-white">
+        <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-ink dark:text-white">
           {project.title}
         </h3>
         <p className="text-base text-indigo-600 dark:text-indigo-400 font-medium mt-1">
@@ -92,7 +92,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, is
         )}
 
         {/* Deep Description */}
-        <div className="mt-5 space-y-3 text-sm sm:text-base text-slate-600 dark:text-slate-200 leading-relaxed">
+        <div className="mt-5 space-y-3 text-sm sm:text-base text-ink-soft dark:text-slate-200 leading-relaxed">
           <p>{project.description}</p>
           <p>{project.longDescription}</p>
         </div>
@@ -100,7 +100,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, is
         {/* Architecture & Engineering Highlights */}
         {project.highlights && project.highlights.length > 0 && (
           <div className="mt-6">
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-300 mb-3">
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-muted dark:text-slate-300 mb-3">
               Engineering Highlights
             </h4>
             <div className="space-y-2">
@@ -116,7 +116,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, is
 
         {/* Tech Stack Tags */}
         <div className="mt-6">
-          <h4 className="text-sm font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-300 mb-2.5">
+          <h4 className="text-sm font-semibold uppercase tracking-wider text-muted dark:text-slate-300 mb-2.5">
             Technologies & Tools
           </h4>
           <div className="flex flex-wrap gap-1.5">
@@ -126,7 +126,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, is
                 className={`px-2.5 py-1 rounded-md text-xs font-mono font-medium ${
                   isDark
                     ? 'bg-slate-800 text-slate-200 border border-slate-700'
-                    : 'bg-slate-100 text-slate-700 border border-slate-200'
+                    : 'bg-slate-100 text-slate-700 border border-rule'
                 }`}
               >
                 {tag}
@@ -136,13 +136,13 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, is
         </div>
 
         {/* Actions Bottom Bar */}
-        <div className="mt-8 pt-5 border-t border-slate-200 dark:border-slate-800 flex flex-wrap items-center justify-between gap-3">
+        <div className="mt-8 pt-5 border-t border-rule dark:border-slate-800 flex flex-wrap items-center justify-between gap-3">
           {project.githubUrl && (
             <a
               href={project.githubUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center space-x-2 px-4 py-2 rounded-lg bg-slate-900 text-white dark:bg-white dark:text-slate-900 text-sm font-medium hover:opacity-90 transition-opacity"
+              className="inline-flex items-center space-x-2 px-4 py-2 rounded-lg bg-slate-900 text-white dark:bg-surface dark:text-ink text-sm font-medium hover:opacity-90 transition-opacity"
             >
               <Github className="w-4 h-4" />
               <span>GitHub / Project Resources</span>

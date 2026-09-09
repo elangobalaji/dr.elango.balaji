@@ -48,12 +48,12 @@ export const Skills: React.FC<SkillsProps> = ({ skills, isDark }) => {
   ];
 
   return (
-    <section id="skills" className="py-12 border-t border-slate-200 dark:border-slate-800">
+    <section id="skills" className="py-12 border-t border-rule dark:border-slate-800">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-xl font-bold tracking-tight text-slate-900 dark:text-white mb-2">
+        <h2 className="text-xl font-bold tracking-tight text-ink dark:text-white mb-2">
           skills & diagnostics
         </h2>
-        <p className="text-xs text-slate-600 dark:text-slate-400 mb-8">
+        <p className="text-xs text-ink-soft dark:text-slate-400 mb-8">
           Experimental capabilities across synchrotron beamline campaigns, electrochemistry, and computational modeling.
         </p>
 
@@ -68,18 +68,18 @@ export const Skills: React.FC<SkillsProps> = ({ skills, isDark }) => {
                 className={`p-4 rounded-lg border flex flex-col justify-between transition-colors ${
                   isDark
                     ? 'bg-slate-900/60 border-slate-800'
-                    : 'bg-white border-slate-200'
+                    : 'bg-surface border-rule'
                 }`}
               >
                 <div>
-                  <div className="flex items-center space-x-2 text-blue-600 dark:text-blue-400 mb-2">
+                  <div className="flex items-center space-x-2 text-terracotta dark:text-blue-400 mb-2">
                     <Icon className="w-4 h-4 shrink-0" />
-                    <h3 className="font-bold text-sm text-slate-900 dark:text-white">
+                    <h3 className="font-bold text-sm text-ink dark:text-white">
                       {cat.title}
                     </h3>
                   </div>
 
-                  <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+                  <p className="text-xs text-ink-soft dark:text-slate-300 leading-relaxed mb-4">
                     {cat.description}
                   </p>
                 </div>

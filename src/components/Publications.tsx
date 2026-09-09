@@ -86,7 +86,7 @@ export const Publications: React.FC<PublicationsProps> = ({
       <>
         {parts.map((part, i) =>
           /^(Elango Balaji T|Balaji, E\.|E\. Balaji|Elango Balaji)$/i.test(part) ? (
-            <strong key={i} className="text-slate-900 dark:text-white font-semibold underline decoration-blue-500/50">
+            <strong key={i} className="text-ink dark:text-white font-semibold underline decoration-blue-500/50">
               {part}
             </strong>
           ) : (
@@ -98,17 +98,17 @@ export const Publications: React.FC<PublicationsProps> = ({
   };
 
   return (
-    <section id="publications" className="py-12 border-t border-slate-200 dark:border-slate-800">
+    <section id="publications" className="py-12 border-t border-rule dark:border-slate-800">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Navigation Tabs (al-folio style) */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-6 pb-2 border-b border-slate-200 dark:border-slate-800 gap-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-6 pb-2 border-b border-rule dark:border-slate-800 gap-4">
           <div className="flex items-center space-x-6">
             <button
               onClick={() => setActiveTab('publications')}
               className={`text-xl font-bold tracking-tight pb-1 border-b-2 transition-colors ${
                 activeTab === 'publications'
-                  ? 'text-blue-600 dark:text-blue-400 border-blue-600 dark:border-blue-400'
-                  : 'text-slate-500 dark:text-slate-400 border-transparent hover:text-slate-900 dark:hover:text-white'
+                  ? 'text-terracotta dark:text-blue-400 border-blue-600 dark:border-blue-400'
+                  : 'text-muted dark:text-slate-400 border-transparent hover:text-ink dark:hover:text-white'
               }`}
             >
               publications ({publications.length})
@@ -118,8 +118,8 @@ export const Publications: React.FC<PublicationsProps> = ({
               onClick={() => setActiveTab('grants')}
               className={`text-xl font-bold tracking-tight pb-1 border-b-2 transition-colors ${
                 activeTab === 'grants'
-                  ? 'text-blue-600 dark:text-blue-400 border-blue-600 dark:border-blue-400'
-                  : 'text-slate-500 dark:text-slate-400 border-transparent hover:text-slate-900 dark:hover:text-white'
+                  ? 'text-terracotta dark:text-blue-400 border-blue-600 dark:border-blue-400'
+                  : 'text-muted dark:text-slate-400 border-transparent hover:text-ink dark:hover:text-white'
               }`}
             >
               grants ({grants.length})
@@ -129,8 +129,8 @@ export const Publications: React.FC<PublicationsProps> = ({
               onClick={() => setActiveTab('presentations')}
               className={`text-xl font-bold tracking-tight pb-1 border-b-2 transition-colors ${
                 activeTab === 'presentations'
-                  ? 'text-blue-600 dark:text-blue-400 border-blue-600 dark:border-blue-400'
-                  : 'text-slate-500 dark:text-slate-400 border-transparent hover:text-slate-900 dark:hover:text-white'
+                  ? 'text-terracotta dark:text-blue-400 border-blue-600 dark:border-blue-400'
+                  : 'text-muted dark:text-slate-400 border-transparent hover:text-ink dark:hover:text-white'
               }`}
             >
               talks ({presentations.length})
@@ -150,7 +150,7 @@ export const Publications: React.FC<PublicationsProps> = ({
                   className={`pl-8 pr-3 py-1 text-xs rounded border transition-colors ${
                     isDark
                       ? 'bg-slate-900 border-slate-700 text-slate-200 placeholder-slate-500 focus:border-blue-400'
-                      : 'bg-white border-slate-300 text-slate-800 placeholder-slate-400 focus:border-blue-600'
+                      : 'bg-surface border-slate-300 text-ink placeholder-slate-400 focus:border-blue-600'
                   }`}
                 />
               </div>
@@ -160,7 +160,7 @@ export const Publications: React.FC<PublicationsProps> = ({
                 onClick={() => setFilterLeadAuthor(!filterLeadAuthor)}
                 className={`al-folio-btn text-xs ${
                   filterLeadAuthor
-                    ? '!border-blue-500 !text-blue-600 dark:!text-blue-400 font-semibold'
+                    ? '!border-blue-500 !text-terracotta dark:!text-blue-400 font-semibold'
                     : ''
                 }`}
               >
@@ -174,14 +174,14 @@ export const Publications: React.FC<PublicationsProps> = ({
         {activeTab === 'publications' && (
           <div className="space-y-8">
             {pubsByYear.length === 0 ? (
-              <p className="text-sm text-slate-500 py-8 text-center">
+              <p className="text-sm text-muted py-8 text-center">
                 No publications match your filter query.
               </p>
             ) : (
               pubsByYear.map(({ year, items }) => (
                 <div key={year} className="space-y-4">
                   {/* Year Heading (al-folio standard) */}
-                  <h3 className="text-lg font-bold font-mono tracking-tight text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800 pb-1">
+                  <h3 className="text-lg font-bold font-mono tracking-tight text-ink dark:text-white border-b border-rule dark:border-slate-800 pb-1">
                     {year}
                   </h3>
 
@@ -213,17 +213,17 @@ export const Publications: React.FC<PublicationsProps> = ({
 
                           <div className="flex-1 space-y-1.5">
                             {/* Paper Title */}
-                            <div className="font-bold text-slate-900 dark:text-white leading-snug">
+                            <div className="font-bold text-ink dark:text-white leading-snug">
                               {pub.title}
                             </div>
 
                             {/* Authors */}
-                            <div className="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+                            <div className="text-xs sm:text-sm text-ink-soft dark:text-slate-300">
                               {formatAuthors(pub.authors)}
                             </div>
 
                             {/* Journal Citation & Badges */}
-                            <div className="text-xs text-slate-600 dark:text-slate-300 flex flex-wrap items-center gap-2">
+                            <div className="text-xs text-ink-soft dark:text-slate-300 flex flex-wrap items-center gap-2">
                               <em className="text-blue-700 dark:text-blue-400 font-medium">
                                 {pub.journal}
                               </em>
@@ -236,7 +236,7 @@ export const Publications: React.FC<PublicationsProps> = ({
                               )}
 
                               {pub.leadAuthor && (
-                                <span className="text-[10px] px-1.5 py-0.2 rounded bg-blue-50 dark:bg-blue-950/50 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800 font-medium">
+                                <span className="text-[10px] px-1.5 py-0.2 rounded bg-orange-50 dark:bg-blue-950/50 text-blue-700 dark:text-blue-300 border border-orange-200 dark:border-blue-800 font-medium">
                                   lead author
                                 </span>
                               )}
@@ -317,8 +317,8 @@ export const Publications: React.FC<PublicationsProps> = ({
 
                             {/* Expandable Abstract Box */}
                             {isAbstractOpen && pub.abstract && (
-                              <div className="mt-2 p-3 rounded bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-200 text-xs leading-relaxed border border-slate-200 dark:border-slate-700">
-                                <span className="font-semibold text-slate-900 dark:text-white">
+                              <div className="mt-2 p-3 rounded bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-200 text-xs leading-relaxed border border-rule dark:border-slate-700">
+                                <span className="font-semibold text-ink dark:text-white">
                                   Abstract:{' '}
                                 </span>
                                 {pub.abstract}
@@ -338,7 +338,7 @@ export const Publications: React.FC<PublicationsProps> = ({
         {/* Tab 2: Successful Grants & Proposals */}
         {activeTab === 'grants' && (
           <div className="space-y-4">
-            <p className="text-xs text-slate-600 dark:text-slate-400 mb-4">
+            <p className="text-xs text-ink-soft dark:text-slate-400 mb-4">
               Direct proposal architecture, mechanistic hypotheses, scientific diagrams, and experimental designs contributing to national and international research funding.
             </p>
 
@@ -349,11 +349,11 @@ export const Publications: React.FC<PublicationsProps> = ({
                   className={`p-4 rounded-lg border transition-colors ${
                     isDark
                       ? 'bg-slate-900/60 border-slate-800'
-                      : 'bg-white border-slate-200'
+                      : 'bg-surface border-rule'
                   }`}
                 >
                   <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-1">
-                    <h4 className="text-base font-bold text-slate-900 dark:text-white">
+                    <h4 className="text-base font-bold text-ink dark:text-white">
                       {grant.title}
                     </h4>
                     <span className="font-mono text-sm font-bold text-emerald-600 dark:text-emerald-400">
@@ -361,11 +361,11 @@ export const Publications: React.FC<PublicationsProps> = ({
                     </span>
                   </div>
 
-                  <div className="text-xs text-blue-600 dark:text-blue-400 font-medium mb-2">
+                  <div className="text-xs text-terracotta dark:text-blue-400 font-medium mb-2">
                     {grant.agency} · {grant.period} · Role: {grant.role}
                   </div>
 
-                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-200 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-ink-soft dark:text-slate-200 leading-relaxed">
                     {grant.description}
                   </p>
                 </div>
@@ -377,7 +377,7 @@ export const Publications: React.FC<PublicationsProps> = ({
         {/* Tab 3: Conference Presentations */}
         {activeTab === 'presentations' && (
           <div className="space-y-4">
-            <p className="text-xs text-slate-600 dark:text-slate-300 mb-4">
+            <p className="text-xs text-ink-soft dark:text-slate-300 mb-4">
               Selected oral and poster presentations at international battery symposia and materials societies.
             </p>
 
@@ -385,26 +385,26 @@ export const Publications: React.FC<PublicationsProps> = ({
               className={`rounded-lg border divide-y overflow-hidden text-sm ${
                 isDark
                   ? 'bg-slate-900/60 border-slate-800 divide-slate-800 text-slate-200'
-                  : 'bg-white border-slate-200 divide-slate-100 text-slate-700'
+                  : 'bg-surface border-rule divide-slate-100 text-slate-700'
               }`}
             >
               {presentations.map((pres) => (
                 <div key={pres.id} className="p-4 space-y-1">
                   <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
-                    <span className="font-bold text-slate-900 dark:text-white">
+                    <span className="font-bold text-ink dark:text-white">
                       {pres.title}
                     </span>
-                    <span className="text-xs font-mono text-slate-500 dark:text-slate-400">
+                    <span className="text-xs font-mono text-muted dark:text-slate-400">
                       {pres.date}
                     </span>
                   </div>
 
-                  <div className="text-xs text-blue-600 dark:text-blue-400 font-medium">
+                  <div className="text-xs text-terracotta dark:text-blue-400 font-medium">
                     {pres.conference} · {pres.location} ({pres.type})
                   </div>
 
                   {pres.description && (
-                    <p className="text-xs text-slate-600 dark:text-slate-300 pt-1">
+                    <p className="text-xs text-ink-soft dark:text-slate-300 pt-1">
                       {pres.description}
                     </p>
                   )}

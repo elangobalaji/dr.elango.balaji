@@ -4,6 +4,7 @@
  */
 
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { News } from './components/News';
@@ -28,6 +29,17 @@ import {
   defaultNews,
 } from './data/profileData';
 import { ProfileData } from './types';
+
+// Scroll to top on route change
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 export default function App() {
   // Theme state with localStorage persistence (al-folio default light theme with dark toggle)
@@ -69,84 +81,111 @@ export default function App() {
   };
 
   return (
-    <div
-      className={`min-h-screen transition-colors duration-150 ${
-        isDark ? 'bg-slate-900 text-slate-100' : 'bg-white text-slate-800'
-      }`}
-    >
-      {/* al-folio Navigation */}
-      <Navbar
-        profile={profile}
-        isDark={isDark}
-        onToggleTheme={handleToggleTheme}
-        onOpenDeployGuide={() => setDeployGuideOpen(true)}
-        onOpenResume={() => setResumeOpen(true)}
-      />
-
-      {/* Main Content Sections (al-folio layout) */}
-      <main id="main-content">
-        {/* Profile & About */}
-        <Hero
+    <Router>
+      <ScrollToTop />
+      <div
+        className={`min-h-screen transition-colors duration-150 ${
+          isDark ? 'bg-slate-900 text-slate-100' : 'bg-paper text-ink'
+        }`}
+      >
+        {/* al-folio Navigation */}
+        <Navbar
           profile={profile}
           isDark={isDark}
+          onToggleTheme={handleToggleTheme}
           onOpenDeployGuide={() => setDeployGuideOpen(true)}
           onOpenResume={() => setResumeOpen(true)}
         />
 
-        {/* Recent News & Announcements */}
-        <News news={defaultNews} isDark={isDark} />
+        {/* Main Content Sections (al-folio layout) */}
+        <main id="main-content" className="pt-16 min-h-[calc(100vh-100px)]">
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  <Hero
+                    profile={profile}
+                    isDark={isDark}
+                    onOpenDeployGuide={() => setDeployGuideOpen(true)}
+                    onOpenResume={() => setResumeOpen(true)}
+                  />
+                  <News news={defaultNews} isDark={isDark} />
+                  <Contact profile={profile} isDark={isDark} />
+                </>
+              }
+            />
+            <Route
+              path="/publications"
+              element={
+                <div className="py-8">
+                  <Publications
+                    publications={defaultPublications}
+                    grants={defaultGrants}
+                    presentations={defaultPresentations}
+                    isDark={isDark}
+                  />
+                </div>
+              }
+            />
+            <Route
+              path="/research"
+              element={
+                <div className="py-8">
+                  <Projects projects={defaultProjects} isDark={isDark} />
+                </div>
+              }
+            />
+            <Route
+              path="/experience"
+              element={
+                <div className="py-8">
+                  <Experience
+                    experiences={defaultExperiences}
+                    education={defaultEducation}
+                    isDark={isDark}
+                  />
+                </div>
+              }
+            />
+            <Route
+              path="/skills"
+              element={
+                <div className="py-8">
+                  <Skills skills={defaultSkills} isDark={isDark} />
+                </div>
+              }
+            />
+          </Routes>
+        </main>
 
-        {/* Research Themes */}
-        <Projects projects={defaultProjects} isDark={isDark} />
+        {/* Footer */}
+        <Footer
+          profile={profile}
+          isDark={isDark}
+          onOpenDeployGuide={() => setDeployGuideOpen(true)}
+        />
 
-        {/* Peer-Reviewed Publications & Grants */}
-        <Publications
+        {/* GitHub Deployment Guide Modal */}
+        <GitHubDeployModal
+          isOpen={deployGuideOpen}
+          onClose={() => setDeployGuideOpen(false)}
+          isDark={isDark}
+        />
+
+        {/* Academic Curriculum Vitae Modal */}
+        <ResumeModal
+          isOpen={resumeOpen}
+          onClose={() => setResumeOpen(false)}
+          profile={profile}
+          experiences={defaultExperiences}
+          skills={defaultSkills}
+          education={defaultEducation}
           publications={defaultPublications}
           grants={defaultGrants}
-          presentations={defaultPresentations}
           isDark={isDark}
         />
-
-        {/* Experience & Education */}
-        <Experience
-          experiences={defaultExperiences}
-          education={defaultEducation}
-          isDark={isDark}
-        />
-
-        {/* Laboratory Skills & Diagnostics Matrix */}
-        <Skills skills={defaultSkills} isDark={isDark} />
-
-        {/* Contact & Office Info */}
-        <Contact profile={profile} isDark={isDark} />
-      </main>
-
-      {/* Footer */}
-      <Footer
-        profile={profile}
-        isDark={isDark}
-        onOpenDeployGuide={() => setDeployGuideOpen(true)}
-      />
-
-      {/* GitHub Deployment Guide Modal */}
-      <GitHubDeployModal
-        isOpen={deployGuideOpen}
-        onClose={() => setDeployGuideOpen(false)}
-        isDark={isDark}
-      />
-
-      {/* Academic Curriculum Vitae Modal */}
-      <ResumeModal
-        isOpen={resumeOpen}
-        onClose={() => setResumeOpen(false)}
-        profile={profile}
-        experiences={defaultExperiences}
-        skills={defaultSkills}
-        education={defaultEducation}
-        publications={defaultPublications}
-        grants={defaultGrants}
-        isDark={isDark}
-      />
-    </div>
+      </div>
+    </Router>
   );
 }

@@ -56,12 +56,12 @@ export const Contact: React.FC<ContactProps> = ({ profile, isDark }) => {
   };
 
   return (
-    <section id="contact" className="py-12 border-t border-slate-200 dark:border-slate-800">
+    <section id="contact" className="py-12 border-t border-rule dark:border-slate-800">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-xl font-bold tracking-tight text-slate-900 dark:text-white mb-2">
+        <h2 className="text-xl font-bold tracking-tight text-ink dark:text-white mb-2">
           contact
         </h2>
-        <p className="text-xs text-slate-600 dark:text-slate-400 mb-8">
+        <p className="text-xs text-ink-soft dark:text-slate-400 mb-8">
           Feel free to reach out for research collaborations, synchrotron beamtime partnerships, or academic inquiries.
         </p>
 
@@ -69,26 +69,26 @@ export const Contact: React.FC<ContactProps> = ({ profile, isDark }) => {
           {/* Office & Laboratory Information (al-folio academic address) */}
           <div className="space-y-4 text-sm">
             <div className="space-y-1">
-              <h3 className="font-bold text-base text-slate-900 dark:text-white">
+              <h3 className="font-bold text-base text-ink dark:text-white">
                 Office & Laboratory
               </h3>
-              <p className="text-xs text-blue-600 dark:text-blue-400 font-medium">
+              <p className="text-xs text-terracotta dark:text-blue-400 font-medium">
                 Sustainable Energy Development (SEED) Center
               </p>
-              <p className="text-xs text-slate-600 dark:text-slate-300">
+              <p className="text-xs text-ink-soft dark:text-slate-300">
                 Department of Chemical Engineering
               </p>
-              <p className="text-xs text-slate-600 dark:text-slate-300">
+              <p className="text-xs text-ink-soft dark:text-slate-300">
                 National Taiwan University of Science and Technology (Taiwan Tech)
               </p>
-              <p className="text-xs text-slate-600 dark:text-slate-300">
+              <p className="text-xs text-ink-soft dark:text-slate-300">
                 No. 43, Sec. 4, Keelung Rd., Da'an District, Taipei 10607, Taiwan
               </p>
             </div>
 
             <div className="pt-2 space-y-2 text-xs">
               <div className="flex items-center space-x-2 text-slate-700 dark:text-slate-200">
-                <Mail className="w-4 h-4 text-blue-500 shrink-0" />
+                <Mail className="w-4 h-4 text-terracotta shrink-0" />
                 <span>
                   Email:{' '}
                   <a
@@ -114,7 +114,7 @@ export const Contact: React.FC<ContactProps> = ({ profile, isDark }) => {
               </div>
 
               <div className="flex items-center space-x-2 text-slate-700 dark:text-slate-200">
-                <BookOpen className="w-4 h-4 text-blue-500 shrink-0" />
+                <BookOpen className="w-4 h-4 text-terracotta shrink-0" />
                 <span>
                   Google Scholar:{' '}
                   <a
@@ -132,7 +132,7 @@ export const Contact: React.FC<ContactProps> = ({ profile, isDark }) => {
                 <Clock className="w-4 h-4 text-amber-500 shrink-0" />
                 <span>
                   Local Time (Taipei):{' '}
-                  <strong className="font-mono text-slate-900 dark:text-white">
+                  <strong className="font-mono text-ink dark:text-white">
                     {taipeiTime || 'UTC+8'}
                   </strong>
                 </span>
@@ -166,10 +166,10 @@ export const Contact: React.FC<ContactProps> = ({ profile, isDark }) => {
           {/* Simple Contact Form */}
           <div
             className={`p-5 rounded-lg border ${
-              isDark ? 'bg-slate-900/60 border-slate-800' : 'bg-white border-slate-200'
+              isDark ? 'bg-slate-900/60 border-slate-800' : 'bg-surface border-rule'
             }`}
           >
-            <h3 className="font-bold text-sm text-slate-900 dark:text-white mb-4">
+            <h3 className="font-bold text-sm text-ink dark:text-white mb-4">
               Send a Direct Message
             </h3>
 
@@ -192,7 +192,7 @@ export const Contact: React.FC<ContactProps> = ({ profile, isDark }) => {
                     className={`w-full px-3 py-1.5 rounded border transition-colors ${
                       isDark
                         ? 'bg-slate-950 border-slate-700 text-slate-200 focus:border-blue-400'
-                        : 'bg-white border-slate-300 text-slate-800 focus:border-blue-600'
+                        : 'bg-surface border-slate-300 text-ink focus:border-blue-600'
                     }`}
                     placeholder="Prof. Jane Doe"
                   />
@@ -210,7 +210,7 @@ export const Contact: React.FC<ContactProps> = ({ profile, isDark }) => {
                     className={`w-full px-3 py-1.5 rounded border transition-colors ${
                       isDark
                         ? 'bg-slate-950 border-slate-700 text-slate-200 focus:border-blue-400'
-                        : 'bg-white border-slate-300 text-slate-800 focus:border-blue-600'
+                        : 'bg-surface border-slate-300 text-ink focus:border-blue-600'
                     }`}
                     placeholder="jane@university.edu"
                   />
@@ -228,7 +228,7 @@ export const Contact: React.FC<ContactProps> = ({ profile, isDark }) => {
                     className={`w-full px-3 py-1.5 rounded border transition-colors ${
                       isDark
                         ? 'bg-slate-950 border-slate-700 text-slate-200 focus:border-blue-400'
-                        : 'bg-white border-slate-300 text-slate-800 focus:border-blue-600'
+                        : 'bg-surface border-slate-300 text-ink focus:border-blue-600'
                     }`}
                     placeholder="Beamtime inquiry / Research discussion"
                   />
@@ -246,7 +246,7 @@ export const Contact: React.FC<ContactProps> = ({ profile, isDark }) => {
                     className={`w-full px-3 py-1.5 rounded border transition-colors ${
                       isDark
                         ? 'bg-slate-950 border-slate-700 text-slate-200 focus:border-blue-400'
-                        : 'bg-white border-slate-300 text-slate-800 focus:border-blue-600'
+                        : 'bg-surface border-slate-300 text-ink focus:border-blue-600'
                     }`}
                     placeholder="Your inquiry details..."
                   />
@@ -255,7 +255,7 @@ export const Contact: React.FC<ContactProps> = ({ profile, isDark }) => {
                 <button
                   type="submit"
                   disabled={status === 'sending'}
-                  className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded bg-blue-600 hover:bg-blue-500 text-white font-semibold transition-colors disabled:opacity-50"
+                  className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded bg-terracotta hover:bg-orange-500 text-white font-semibold transition-colors disabled:opacity-50"
                 >
                   <Send className="w-3 h-3" />
                   <span>{status === 'sending' ? 'Sending...' : 'Send Message'}</span>
