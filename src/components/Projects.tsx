@@ -99,7 +99,7 @@ export const Projects: React.FC<ProjectsProps> = ({ projects, isDark }) => {
 
                 {/* Highlights */}
                 {project.highlights && project.highlights.length > 0 && (
-                  <ul className="list-disc list-outside ml-4 space-y-1 text-xs text-slate-600 dark:text-slate-400 mb-4">
+                  <ul className="list-disc list-outside ml-4 space-y-1 text-xs text-slate-600 dark:text-slate-200 mb-4">
                     {project.highlights.slice(0, 2).map((h, i) => (
                       <li key={i}>{h}</li>
                     ))}
@@ -113,7 +113,7 @@ export const Projects: React.FC<ProjectsProps> = ({ projects, isDark }) => {
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400"
+                      className="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300"
                     >
                       {tag}
                     </span>

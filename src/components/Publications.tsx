@@ -218,12 +218,12 @@ export const Publications: React.FC<PublicationsProps> = ({
                             </div>
 
                             {/* Authors */}
-                            <div className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
+                            <div className="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
                               {formatAuthors(pub.authors)}
                             </div>
 
                             {/* Journal Citation & Badges */}
-                            <div className="text-xs text-slate-600 dark:text-slate-400 flex flex-wrap items-center gap-2">
+                            <div className="text-xs text-slate-600 dark:text-slate-300 flex flex-wrap items-center gap-2">
                               <em className="text-blue-700 dark:text-blue-400 font-medium">
                                 {pub.journal}
                               </em>
@@ -317,7 +317,7 @@ export const Publications: React.FC<PublicationsProps> = ({
 
                             {/* Expandable Abstract Box */}
                             {isAbstractOpen && pub.abstract && (
-                              <div className="mt-2 p-3 rounded bg-slate-50 dark:bg-slate-850 text-slate-700 dark:text-slate-300 text-xs leading-relaxed border border-slate-200 dark:border-slate-800">
+                              <div className="mt-2 p-3 rounded bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-200 text-xs leading-relaxed border border-slate-200 dark:border-slate-700">
                                 <span className="font-semibold text-slate-900 dark:text-white">
                                   Abstract:{' '}
                                 </span>
@@ -365,7 +365,7 @@ export const Publications: React.FC<PublicationsProps> = ({
                     {grant.agency} · {grant.period} · Role: {grant.role}
                   </div>
 
-                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-200 leading-relaxed">
                     {grant.description}
                   </p>
                 </div>
@@ -377,14 +377,14 @@ export const Publications: React.FC<PublicationsProps> = ({
         {/* Tab 3: Conference Presentations */}
         {activeTab === 'presentations' && (
           <div className="space-y-4">
-            <p className="text-xs text-slate-600 dark:text-slate-400 mb-4">
+            <p className="text-xs text-slate-600 dark:text-slate-300 mb-4">
               Selected oral and poster presentations at international battery symposia and materials societies.
             </p>
 
             <div
               className={`rounded-lg border divide-y overflow-hidden text-sm ${
                 isDark
-                  ? 'bg-slate-900/60 border-slate-800 divide-slate-800 text-slate-300'
+                  ? 'bg-slate-900/60 border-slate-800 divide-slate-800 text-slate-200'
                   : 'bg-white border-slate-200 divide-slate-100 text-slate-700'
               }`}
             >
@@ -394,7 +394,7 @@ export const Publications: React.FC<PublicationsProps> = ({
                     <span className="font-bold text-slate-900 dark:text-white">
                       {pres.title}
                     </span>
-                    <span className="text-xs font-mono text-slate-500">
+                    <span className="text-xs font-mono text-slate-500 dark:text-slate-400">
                       {pres.date}
                     </span>
                   </div>
@@ -404,7 +404,7 @@ export const Publications: React.FC<PublicationsProps> = ({
                   </div>
 
                   {pres.description && (
-                    <p className="text-xs text-slate-600 dark:text-slate-400 pt-1">
+                    <p className="text-xs text-slate-600 dark:text-slate-300 pt-1">
                       {pres.description}
                     </p>
                   )}

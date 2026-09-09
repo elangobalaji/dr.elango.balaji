@@ -75,19 +75,19 @@ export const Contact: React.FC<ContactProps> = ({ profile, isDark }) => {
               <p className="text-xs text-blue-600 dark:text-blue-400 font-medium">
                 Sustainable Energy Development (SEED) Center
               </p>
-              <p className="text-xs text-slate-600 dark:text-slate-400">
+              <p className="text-xs text-slate-600 dark:text-slate-300">
                 Department of Chemical Engineering
               </p>
-              <p className="text-xs text-slate-600 dark:text-slate-400">
+              <p className="text-xs text-slate-600 dark:text-slate-300">
                 National Taiwan University of Science and Technology (Taiwan Tech)
               </p>
-              <p className="text-xs text-slate-600 dark:text-slate-400">
+              <p className="text-xs text-slate-600 dark:text-slate-300">
                 No. 43, Sec. 4, Keelung Rd., Da'an District, Taipei 10607, Taiwan
               </p>
             </div>
 
             <div className="pt-2 space-y-2 text-xs">
-              <div className="flex items-center space-x-2 text-slate-700 dark:text-slate-300">
+              <div className="flex items-center space-x-2 text-slate-700 dark:text-slate-200">
                 <Mail className="w-4 h-4 text-blue-500 shrink-0" />
                 <span>
                   Email:{' '}
@@ -100,7 +100,7 @@ export const Contact: React.FC<ContactProps> = ({ profile, isDark }) => {
                 </span>
               </div>
 
-              <div className="flex items-center space-x-2 text-slate-700 dark:text-slate-300">
+              <div className="flex items-center space-x-2 text-slate-700 dark:text-slate-200">
                 <Phone className="w-4 h-4 text-emerald-500 shrink-0" />
                 <span>
                   Phone:{' '}
@@ -113,7 +113,7 @@ export const Contact: React.FC<ContactProps> = ({ profile, isDark }) => {
                 </span>
               </div>
 
-              <div className="flex items-center space-x-2 text-slate-700 dark:text-slate-300">
+              <div className="flex items-center space-x-2 text-slate-700 dark:text-slate-200">
                 <BookOpen className="w-4 h-4 text-blue-500 shrink-0" />
                 <span>
                   Google Scholar:{' '}
@@ -128,7 +128,7 @@ export const Contact: React.FC<ContactProps> = ({ profile, isDark }) => {
                 </span>
               </div>
 
-              <div className="flex items-center space-x-2 text-slate-700 dark:text-slate-300">
+              <div className="flex items-center space-x-2 text-slate-700 dark:text-slate-200">
                 <Clock className="w-4 h-4 text-amber-500 shrink-0" />
                 <span>
                   Local Time (Taipei):{' '}

@@ -79,7 +79,7 @@ export const Skills: React.FC<SkillsProps> = ({ skills, isDark }) => {
                     </h3>
                   </div>
 
-                  <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+                  <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
                     {cat.description}
                   </p>
                 </div>
@@ -88,7 +88,7 @@ export const Skills: React.FC<SkillsProps> = ({ skills, isDark }) => {
                   {categorySkills.map((s) => (
                     <span
                       key={s.name}
-                      className="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-medium"
+                      className="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 font-medium"
                     >
                       {s.name}
                     </span>

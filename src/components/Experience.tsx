@@ -44,11 +44,11 @@ export const Experience: React.FC<ExperienceProps> = ({
                     {exp.company} · {exp.location}
                   </div>
 
-                  <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                  <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
                     {exp.description}
                   </p>
 
-                  <ul className="list-disc list-outside ml-4 space-y-1 text-xs text-slate-700 dark:text-slate-300">
+                  <ul className="list-disc list-outside ml-4 space-y-1 text-xs text-slate-700 dark:text-slate-200">
                     {exp.achievements.map((ach, idx) => (
                       <li key={idx} className="leading-snug">
                         {ach}
@@ -74,7 +74,7 @@ export const Experience: React.FC<ExperienceProps> = ({
                     <span className="font-bold text-slate-900 dark:text-white">
                       {edu.degree}
                     </span>
-                    <span className="font-mono text-xs text-slate-500">
+                    <span className="font-mono text-xs text-slate-500 dark:text-slate-400">
                       {edu.period}
                     </span>
                   </div>
@@ -84,13 +84,13 @@ export const Experience: React.FC<ExperienceProps> = ({
                   </div>
 
                   {edu.gpa && (
-                    <div className="font-mono text-xs text-slate-500">
+                    <div className="font-mono text-xs text-slate-500 dark:text-slate-400">
                       GPA / Marks: {edu.gpa}
                     </div>
                   )}
 
                   {edu.dissertation && (
-                    <div className="text-xs text-slate-700 dark:text-slate-300">
+                    <div className="text-xs text-slate-700 dark:text-slate-200">
                       <span className="font-medium text-slate-900 dark:text-white">
                         Dissertation:{' '}
                       </span>
@@ -99,7 +99,7 @@ export const Experience: React.FC<ExperienceProps> = ({
                   )}
 
                   {edu.advisors && (
-                    <div className="text-xs text-slate-600 dark:text-slate-400">
+                    <div className="text-xs text-slate-600 dark:text-slate-300">
                       <span className="font-medium text-slate-900 dark:text-white">
                         Supervision & Advisors:{' '}
                       </span>
@@ -108,7 +108,7 @@ export const Experience: React.FC<ExperienceProps> = ({
                   )}
 
                   {edu.details && (
-                    <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed pt-1">
+                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed pt-1">
                       {edu.details}
                     </p>
                   )}

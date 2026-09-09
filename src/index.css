@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -11,6 +13,39 @@
   }
   code, pre, .font-mono {
     font-family: 'Roboto Mono', Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  }
+
+  /* High-Contrast Dark Mode Base Typography */
+  html.dark {
+    color-scheme: dark;
+    background-color: #0f172a;
+    color: #f1f5f9;
+  }
+  html.dark body {
+    background-color: #0f172a;
+    color: #f1f5f9;
+  }
+  html.dark p {
+    color: #e2e8f0;
+  }
+  html.dark strong,
+  html.dark b {
+    color: #ffffff;
+  }
+  html.dark h1,
+  html.dark h2,
+  html.dark h3,
+  html.dark h4,
+  html.dark h5,
+  html.dark h6 {
+    color: #ffffff;
+  }
+  html.dark .text-slate-700,
+  html.dark .text-slate-600 {
+    color: #cbd5e1;
+  }
+  html.dark .text-slate-500 {
+    color: #94a3b8;
   }
 }
 

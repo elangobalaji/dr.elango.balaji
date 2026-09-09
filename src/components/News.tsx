@@ -36,7 +36,7 @@ export const News: React.FC<NewsProps> = ({ news, isDark }) => {
         <div
           className={`rounded-lg border divide-y overflow-hidden text-sm ${
             isDark
-              ? 'bg-slate-900/60 border-slate-800 divide-slate-800/80 text-slate-300'
+              ? 'bg-slate-900/60 border-slate-800 divide-slate-800/80 text-slate-100'
               : 'bg-white border-slate-200 divide-slate-100 text-slate-700'
           }`}
         >
