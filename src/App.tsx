@@ -26,6 +26,7 @@ import {
   defaultPublications,
   defaultGrants,
   defaultPresentations,
+  defaultAwards,
   defaultNews,
 } from './data/profileData';
 import { ProfileData } from './types';
@@ -143,6 +144,7 @@ export default function App() {
                   <Experience
                     experiences={defaultExperiences}
                     education={defaultEducation}
+                    awards={defaultAwards}
                     isDark={isDark}
                   />
                 </div>

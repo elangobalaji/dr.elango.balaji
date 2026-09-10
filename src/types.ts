@@ -123,6 +123,14 @@ export interface PresentationItem {
   details: string;
 }
 
+export interface AwardItem {
+  id: string;
+  title: string;
+  organization: string;
+  year?: string;
+  details?: string;
+}
+
 export interface ArticleItem {
   id: string;
   title: string;

@@ -40,11 +40,11 @@ export const Navbar: React.FC<NavbarProps> = ({
   }, []);
 
   const navLinks = [
-    { name: 'about', href: '/' },
-    { name: 'research', href: '/research' },
-    { name: 'publications', href: '/publications' },
-    { name: 'experience', href: '/experience' },
-    { name: 'skills', href: '/skills' },
+    { name: 'About', href: '/' },
+    { name: 'Research', href: '/research' },
+    { name: 'Publications', href: '/publications' },
+    { name: 'Experience', href: '/experience' },
+    { name: 'Skills', href: '/skills' },
   ];
 
   return (
@@ -109,7 +109,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               title="Curriculum Vitae"
             >
               <FileText className="w-3.5 h-3.5" />
-              <span>cv</span>
+              <span>CV</span>
             </button>
 
             {/* GitHub Deploy Guide Button */}
@@ -124,7 +124,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               title="GitHub Hosting Instructions"
             >
               <Github className="w-3.5 h-3.5" />
-              <span>github</span>
+              <span>GitHub</span>
             </button>
 
             {/* Theme Toggle Button (al-folio iconic moon/sun) */}

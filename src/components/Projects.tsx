@@ -22,11 +22,11 @@ export const Projects: React.FC<ProjectsProps> = ({ projects, isDark }) => {
   const [activeProject, setActiveProject] = useState<Project | null>(null);
 
   const categories: { label: string; value: ProjectCategory }[] = [
-    { label: 'all research', value: 'all' },
-    { label: 'operando synchrotron', value: 'operando' },
-    { label: 'materials & interfaces', value: 'materials' },
-    { label: 'machine learning', value: 'ml' },
-    { label: '3d scientific visualization', value: 'visualization' },
+    { label: 'All Research', value: 'all' },
+    { label: 'Operando Synchrotron', value: 'operando' },
+    { label: 'Materials & Interfaces', value: 'materials' },
+    { label: 'Machine Learning', value: 'ml' },
+    { label: '3D Scientific Visualization', value: 'visualization' },
   ];
 
   const filteredProjects =
@@ -40,7 +40,7 @@ export const Projects: React.FC<ProjectsProps> = ({ projects, isDark }) => {
         <div className="flex flex-col sm:flex-row sm:items-baseline justify-between mb-6 gap-3">
           <div>
             <h2 className="text-xl font-bold tracking-tight text-ink dark:text-white">
-              research
+              Research
             </h2>
             <p className="text-xs text-ink-soft dark:text-slate-400 mt-0.5">
               Core research thrusts spanning multimodal synchrotron imaging, electrocatalysis, and predictive safety models.
@@ -126,7 +126,7 @@ export const Projects: React.FC<ProjectsProps> = ({ projects, isDark }) => {
                     onClick={() => setActiveProject(project)}
                     className="al-folio-btn"
                   >
-                    <span>details</span>
+                    <span>Details</span>
                     <ChevronRight className="w-3 h-3" />
                   </button>
 
@@ -138,7 +138,7 @@ export const Projects: React.FC<ProjectsProps> = ({ projects, isDark }) => {
                       className="al-folio-btn"
                     >
                       <BookOpen className="w-3 h-3 text-terracotta" />
-                      <span>paper / doi</span>
+                      <span>Paper / DOI</span>
                     </a>
                   )}
 
@@ -149,7 +149,7 @@ export const Projects: React.FC<ProjectsProps> = ({ projects, isDark }) => {
                       rel="noreferrer"
                       className="al-folio-btn"
                     >
-                      <span>code</span>
+                      <span>Code</span>
                       <ExternalLink className="w-3 h-3" />
                     </a>
                   )}

@@ -62,7 +62,7 @@ export const Contact: React.FC<ContactProps> = ({ profile, isDark }) => {
           contact
         </h2>
         <p className="text-xs text-ink-soft dark:text-slate-400 mb-8">
-          Feel free to reach out for research collaborations, synchrotron beamtime partnerships, or academic inquiries.
+          Feel free to reach out for research collaborations or academic inquiries.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -148,7 +148,7 @@ export const Contact: React.FC<ContactProps> = ({ profile, isDark }) => {
                 className="al-folio-btn"
               >
                 <Github className="w-3.5 h-3.5" />
-                <span>github</span>
+                <span>GitHub</span>
               </a>
 
               <a
@@ -158,7 +158,7 @@ export const Contact: React.FC<ContactProps> = ({ profile, isDark }) => {
                 className="al-folio-btn"
               >
                 <Linkedin className="w-3.5 h-3.5" />
-                <span>linkedin</span>
+                <span>LinkedIn</span>
               </a>
             </div>
           </div>

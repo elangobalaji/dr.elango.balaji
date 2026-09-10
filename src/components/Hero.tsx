@@ -227,7 +227,7 @@ export const Hero: React.FC<HeroProps> = ({
                 aria-label="Email"
               >
                 <Mail className="w-3 h-3 text-muted dark:text-slate-300" />
-                <span>email</span>
+                <span>Email</span>
               </a>
 
               <a
@@ -239,7 +239,7 @@ export const Hero: React.FC<HeroProps> = ({
                 aria-label="Google Scholar"
               >
                 <BookOpen className="w-3 h-3 text-terracotta dark:text-blue-400" />
-                <span>scholar</span>
+                <span>Google Scholar</span>
               </a>
 
               <a
@@ -251,7 +251,7 @@ export const Hero: React.FC<HeroProps> = ({
                 aria-label="GitHub"
               >
                 <Github className="w-3 h-3 text-slate-700 dark:text-slate-300" />
-                <span>github</span>
+                <span>GitHub</span>
               </a>
 
               <a
@@ -263,7 +263,7 @@ export const Hero: React.FC<HeroProps> = ({
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-3 h-3 text-terracotta dark:text-blue-400" />
-                <span>linkedin</span>
+                <span>LinkedIn</span>
               </a>
 
               <a
@@ -273,7 +273,7 @@ export const Hero: React.FC<HeroProps> = ({
                 aria-label="Phone"
               >
                 <Phone className="w-3 h-3 text-emerald-600 dark:text-emerald-400" />
-                <span>phone</span>
+                <span>Phone</span>
               </a>
             </div>
 

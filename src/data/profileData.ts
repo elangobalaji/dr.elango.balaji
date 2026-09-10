@@ -7,6 +7,7 @@ import {
   PublicationItem,
   GrantItem,
   PresentationItem,
+  AwardItem,
   ArticleItem,
   NewsItem,
 } from '../types';
@@ -469,28 +470,92 @@ export const defaultGrants: GrantItem[] = [
 
 export const defaultPresentations: PresentationItem[] = [
   {
-    id: 'pres-1',
-    title: 'Operando Synchrotron Insights into Li2S Cathode Activation & Degradation',
-    event: 'SEED Symposium 2026',
-    year: '2026',
+    id: 'pres-nsrrc-2025',
+    title: 'NSRRC Users\' Meeting 2024 and 2025',
+    event: 'National Synchrotron Radiation Research Center (NSRRC) Users\' Meeting',
+    year: '2024 – 2025',
     details:
-      'Presented core doctoral breakthroughs on multimodal operando synchrotron diagnostics in Li-S batteries; participated in panel discussions with world-renowned battery expert Prof. Martin Winter.',
+      'Presented findings on operando synchrotron diagnostics and battery electrode characterizations at the annual NSRRC users\' meetings.',
   },
   {
-    id: 'pres-2',
+    id: 'pres-seed-symposium',
+    title: 'iSEED and SEED Symposiums 2025 and 2026',
+    event: 'iSEED and SEED International Symposiums',
+    year: '2025 – 2026',
+    details:
+      'Presented core doctoral breakthroughs on multimodal operando synchrotron diagnostics in Li-S batteries; participated in interdisciplinary scientific discussions.',
+  },
+  {
+    id: 'pres-ecs-2021',
     title: 'Thermal Treatment of LiCoO2 into Bifunctional Electrocatalysts for Metal-Air Systems',
-    event: 'The Electrochemical Society (ECS) Meetings 2021',
+    event: '240th ECS Meetings',
     year: '2021',
     details:
-      'Presented findings on recycling and thermally converting spent cathode materials into bifunctional oxygen redox electrocatalysts for metal-air battery applications.',
+      'Presented an oral presentation regarding findings on recycling and thermally converting spent cathode materials into bifunctional oxygen redox electrocatalysts.',
   },
   {
-    id: 'pres-3',
-    title: 'Multimodal In-Situ/Operando Characterization of Next-Generation Battery Chemistries',
-    event: 'International Battery & Synchrotron Seminars',
-    year: '2022 — 2025',
+    id: 'pres-iconn',
+    title: '6th International Conference on Nanoscience and Nanotechnology (ICONN)',
+    event: 'SRM IST, Kattankulathur, India',
+    year: '2021',
     details:
-      'Presented at 6 international conferences and 3 seminal symposiums across Taiwan and Asia, demonstrating real-time TXM tomography and beamline operando cell designs.',
+      'Presented a poster on recent findings in nanomaterials and energy storage applications.',
+  },
+  {
+    id: 'pres-heber-hackathon',
+    title: 'Heber Hackathon-2020',
+    event: 'Bishop Heber College, Tiruchirappalli, India',
+    year: '2020',
+    details:
+      'Presented a poster at the Heber Hackathon event organized by the Deanery of Academics.',
+  },
+  {
+    id: 'pres-yim-2020',
+    title: 'Young Investigators Meet (YIM-2020)',
+    event: 'Department of Chemistry, Bishop Heber College, Tiruchirappalli, India',
+    year: '2020',
+    details:
+      'Presented a poster sharing early career research findings in chemical sciences and energy applications.',
+  },
+  {
+    id: 'pres-icabs-2019',
+    title: 'International Conference On Advanced Basic Sciences (ICABS-2019)',
+    event: 'Bishop Heber College, Tiruchirappalli, India',
+    year: '2019',
+    details:
+      'Presented a paper focusing on advanced basic sciences and fundamental material interactions.',
+  },
+  {
+    id: 'pres-iccer-2020',
+    title: '5th International Conference on Chemical and Environmental Research (ICCER-2020)',
+    event: 'Jamal Mohamed College, Tiruchirappalli, India',
+    year: '2020',
+    details:
+      'Presented a poster detailing chemical and environmental research efforts.',
+  },
+  {
+    id: 'pres-hemse-2019',
+    title: 'International High Energy Materials Conference (HEMSE-2019)',
+    event: 'SHAR-ISRO held at IIT Madras, Chennai, India',
+    year: '2019',
+    details:
+      'Attended the conference focused on high energy materials and advanced energy systems.',
+  },
+  {
+    id: 'pres-incames-2019',
+    title: 'International Conference on Advanced Materials for Sustainable Energy and Sensors (INCAMES-2019)',
+    event: 'Alagappa University, Karaikudi, Tamil Nadu, India',
+    year: '2019',
+    details:
+      'Presented a poster on advanced materials applied toward sustainable energy storage and sensor technologies.',
+  },
+  {
+    id: 'pres-iccsn-2019',
+    title: 'International Conference on Chemical Sciences and Nanomaterials (ICCSN - 2019)',
+    event: 'VIT, Vellore, Tamil Nadu, India',
+    year: '2019',
+    details:
+      'Presented a poster on developments in chemical sciences and functional nanomaterials.',
   },
 ];
 
@@ -680,4 +745,24 @@ export const defaultArticles: ArticleItem[] = [
     readTime: '5 min read',
     tags: ['Scientific Illustration', 'Blender 3D', 'Grant Proposals'],
   },
+];
+
+export const defaultAwards: AwardItem[] = [
+  {
+    id: 'a1',
+    title: 'Second prize for best project',
+    organization: 'Heber Hackathon-2020, organized by Deanery of Academics, Bishop Heber College, Tiruchirappalli, Tamil Nadu, India',
+    year: '2020',
+  },
+  {
+    id: 'a2',
+    title: 'Second prize for best poster',
+    organization: 'Young Investigators Meet (YIM-2020), Bishop Heber College, Tiruchirappalli, Tamil Nadu, India',
+    year: '2020',
+  },
+  {
+    id: 'a3',
+    title: 'Highly Cited Paper Award',
+    organization: 'ChemElectroChem (WILEY)',
+  }
 ];

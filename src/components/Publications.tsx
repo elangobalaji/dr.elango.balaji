@@ -111,14 +111,14 @@ export const Publications: React.FC<PublicationsProps> = ({
                   : 'text-muted dark:text-slate-400 border-transparent hover:text-ink dark:hover:text-white'
               }`}
             >
-              publications ({publications.length})
+              Publications ({publications.length})
             </button>
 
             <button
               onClick={() => setActiveTab('grants')}
               className={`text-xl font-bold tracking-tight pb-1 border-b-2 transition-colors ${
                 activeTab === 'grants'
-                  ? 'text-terracotta dark:text-blue-400 border-blue-600 dark:border-blue-400'
+                  ? 'text-terracotta dark:text-orange-400 border-terracotta dark:border-orange-400'
                   : 'text-muted dark:text-slate-400 border-transparent hover:text-ink dark:hover:text-white'
               }`}
             >
@@ -129,11 +129,11 @@ export const Publications: React.FC<PublicationsProps> = ({
               onClick={() => setActiveTab('presentations')}
               className={`text-xl font-bold tracking-tight pb-1 border-b-2 transition-colors ${
                 activeTab === 'presentations'
-                  ? 'text-terracotta dark:text-blue-400 border-blue-600 dark:border-blue-400'
+                  ? 'text-terracotta dark:text-orange-400 border-terracotta dark:border-orange-400'
                   : 'text-muted dark:text-slate-400 border-transparent hover:text-ink dark:hover:text-white'
               }`}
             >
-              talks ({presentations.length})
+              Conferences & Workshops ({presentations.length})
             </button>
           </div>
 
@@ -164,7 +164,7 @@ export const Publications: React.FC<PublicationsProps> = ({
                     : ''
                 }`}
               >
-                <span>first author</span>
+                <span>First Author</span>
               </button>
             </div>
           )}
@@ -251,7 +251,7 @@ export const Publications: React.FC<PublicationsProps> = ({
                                 }
                                 className="al-folio-btn"
                               >
-                                <span>bibtex</span>
+                                <span>BibTeX</span>
                                 {isBibtexOpen ? (
                                   <ChevronUp className="w-3 h-3" />
                                 ) : (
@@ -267,7 +267,7 @@ export const Publications: React.FC<PublicationsProps> = ({
                                   rel="noreferrer"
                                   className="al-folio-btn"
                                 >
-                                  <span>doi</span>
+                                  <span>DOI</span>
                                   <ExternalLink className="w-3 h-3" />
                                 </a>
                               )}
@@ -280,7 +280,7 @@ export const Publications: React.FC<PublicationsProps> = ({
                                   }
                                   className="al-folio-btn"
                                 >
-                                  <span>abstract</span>
+                                  <span>Abstract</span>
                                   {isAbstractOpen ? (
                                     <ChevronUp className="w-3 h-3" />
                                   ) : (
@@ -300,12 +300,12 @@ export const Publications: React.FC<PublicationsProps> = ({
                                   {isCopied ? (
                                     <>
                                       <Check className="w-3 h-3 text-emerald-400" />
-                                      <span>copied</span>
+                                      <span>Copied</span>
                                     </>
                                   ) : (
                                     <>
                                       <Copy className="w-3 h-3" />
-                                      <span>copy</span>
+                                      <span>Copy</span>
                                     </>
                                   )}
                                 </button>
@@ -378,7 +378,7 @@ export const Publications: React.FC<PublicationsProps> = ({
         {activeTab === 'presentations' && (
           <div className="space-y-4">
             <p className="text-xs text-ink-soft dark:text-slate-300 mb-4">
-              Selected oral and poster presentations at international battery symposia and materials societies.
+              A complete record of oral and poster presentations across international and local conferences and workshops.
             </p>
 
             <div
@@ -395,17 +395,17 @@ export const Publications: React.FC<PublicationsProps> = ({
                       {pres.title}
                     </span>
                     <span className="text-xs font-mono text-muted dark:text-slate-400">
-                      {pres.date}
+                      {pres.year}
                     </span>
                   </div>
 
-                  <div className="text-xs text-terracotta dark:text-blue-400 font-medium">
-                    {pres.conference} · {pres.location} ({pres.type})
+                  <div className="text-xs text-terracotta dark:text-orange-400 font-medium">
+                    {pres.event}
                   </div>
 
-                  {pres.description && (
+                  {pres.details && (
                     <p className="text-xs text-ink-soft dark:text-slate-300 pt-1">
-                      {pres.description}
+                      {pres.details}
                     </p>
                   )}
                 </div>

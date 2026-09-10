@@ -26,7 +26,7 @@ export const News: React.FC<NewsProps> = ({ news, isDark }) => {
               onClick={() => setShowAll(!showAll)}
               className="text-xs font-semibold text-terracotta dark:text-blue-400 hover:underline inline-flex items-center space-x-0.5"
             >
-              <span>{showAll ? 'show less' : 'view all announcements'}</span>
+              <span>{showAll ? 'Show Less' : 'View All Announcements'}</span>
               <ChevronRight className="w-3.5 h-3.5" />
             </button>
           )}

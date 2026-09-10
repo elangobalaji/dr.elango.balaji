@@ -1,23 +1,25 @@
 import React from 'react';
-import { Briefcase, GraduationCap, MapPin, Calendar, Award } from 'lucide-react';
-import { ExperienceItem, EducationItem } from '../types';
+import { Briefcase, GraduationCap, Award } from 'lucide-react';
+import { ExperienceItem, EducationItem, AwardItem } from '../types';
 
 interface ExperienceProps {
   experiences: ExperienceItem[];
   education: EducationItem[];
+  awards?: AwardItem[];
   isDark: boolean;
 }
 
 export const Experience: React.FC<ExperienceProps> = ({
   experiences,
   education,
+  awards = [],
   isDark,
 }) => {
   return (
     <section id="experience" className="py-12 border-t border-rule dark:border-slate-800">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-xl font-bold tracking-tight text-ink dark:text-white mb-8">
-          experience & education
+        <h2 className="text-xl font-bold tracking-tight text-ink dark:text-white mb-8 capitalize">
+          Experience & Education
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -25,7 +27,7 @@ export const Experience: React.FC<ExperienceProps> = ({
           <div className="space-y-6">
             <h3 className="text-base font-bold text-ink dark:text-white flex items-center space-x-2 border-b border-rule dark:border-slate-800 pb-2">
               <Briefcase className="w-4 h-4 text-terracotta dark:text-blue-400" />
-              <span>research appointments</span>
+              <span>Research Appointments</span>
             </h3>
 
             <div className="space-y-6">
@@ -64,7 +66,7 @@ export const Experience: React.FC<ExperienceProps> = ({
           <div className="space-y-6">
             <h3 className="text-base font-bold text-ink dark:text-white flex items-center space-x-2 border-b border-rule dark:border-slate-800 pb-2">
               <GraduationCap className="w-4 h-4 text-terracotta dark:text-blue-400" />
-              <span>education</span>
+              <span>Education</span>
             </h3>
 
             <div className="space-y-6">
@@ -117,6 +119,41 @@ export const Experience: React.FC<ExperienceProps> = ({
             </div>
           </div>
         </div>
+
+        {/* Awards Section */}
+        {awards.length > 0 && (
+          <div className="mt-12 pt-8 border-t border-rule dark:border-slate-800">
+            <h3 className="text-base font-bold text-ink dark:text-white flex items-center space-x-2 border-b border-rule dark:border-slate-800 pb-2 mb-6">
+              <Award className="w-4 h-4 text-terracotta dark:text-blue-400" />
+              <span>Honors and Awards</span>
+            </h3>
+
+            <div className="space-y-4">
+              {awards.map((award) => (
+                <div key={award.id} className="text-sm">
+                  <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+                    <span className="font-bold text-ink dark:text-white">
+                      {award.title}
+                    </span>
+                    {award.year && (
+                      <span className="font-mono text-xs text-muted dark:text-slate-400 shrink-0">
+                        {award.year}
+                      </span>
+                    )}
+                  </div>
+                  <div className="text-xs font-semibold text-terracotta dark:text-blue-400 mt-0.5">
+                    {award.organization}
+                  </div>
+                  {award.details && (
+                    <p className="text-xs text-ink-soft dark:text-slate-300 pt-1">
+                      {award.details}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
