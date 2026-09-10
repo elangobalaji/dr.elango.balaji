@@ -155,8 +155,8 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({
               Functional Materials, and a manuscript under revision at JACS). Contributed to major
               grant proposals securing over NT$ 150M. Adept at developing machine learning
               frameworks for battery safety predictions, and creating 3D scientific visualizations
-              and animations in Blender. Supervised by Prof. Bing Joe Hwang; internationally advised
-              by Prof. Martin Winter, Prof. A. Manthiram, and Prof. Hongjie Dai.
+              and animations in Blender. Supervised by Prof. Bing Joe Hwang. The SEED Center is advised
+              by an international board including Prof. Martin Winter, Prof. A. Manthiram, and Prof. Hongjie Dai.
             </p>
           </div>
 

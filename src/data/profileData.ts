@@ -661,7 +661,7 @@ export const defaultEducation: EducationItem[] = [
     location: 'Taipei, Taiwan',
     dissertation: 'Mechanistic insights into Li-S batteries via multimodal operando techniques.',
     advisors:
-      'Prof. Bing Joe Hwang, National Chair Professor, SEED Center; internationally advised by Prof. Martin Winter (MEET, Germany), Prof. A. Manthiram (UT Austin), and Prof. Hongjie Dai (Stanford).',
+      'Prof. Bing Joe Hwang, National Chair Professor. (The SEED Center is supported by an international advisory board including Prof. Martin Winter, Prof. A. Manthiram, and Prof. Hongjie Dai).',
     details:
       'Focused on operando synchrotron diagnostics, Li-S battery interfaces, catalyst dynamics, and machine learning models for battery safety prediction.',
   },

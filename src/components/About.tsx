@@ -90,10 +90,10 @@ export const About: React.FC<AboutProps> = ({ profile, isDark }) => {
             >
               <div className="font-semibold text-ink dark:text-white flex items-center space-x-1.5 mb-1">
                 <Award className="w-4 h-4 text-amber-500" />
-                <span>Supervision & International Mentorship:</span>
+                <span>Supervision & Center Advisory Board:</span>
               </div>
               <p className="leading-relaxed">
-                Supervised by <strong className="text-indigo-600 dark:text-indigo-400">Prof. Bing Joe Hwang</strong> (National Chair Professor, SEED Center, Taiwan Tech); internationally advised by battery pioneers <strong className="text-ink dark:text-white">Prof. Martin Winter</strong> (MEET, University of Münster), <strong className="text-ink dark:text-white">Prof. A. Manthiram</strong> (UT Austin), and <strong className="text-ink dark:text-white">Prof. Hongjie Dai</strong> (Stanford University).
+                Supervised by <strong className="text-indigo-600 dark:text-indigo-400">Prof. Bing Joe Hwang</strong> (National Chair Professor, SEED Center, Taiwan Tech). The SEED Center is supported by an international advisory board including battery pioneers <strong className="text-ink dark:text-white">Prof. Martin Winter</strong> (MEET, University of Münster), <strong className="text-ink dark:text-white">Prof. A. Manthiram</strong> (UT Austin), and <strong className="text-ink dark:text-white">Prof. Hongjie Dai</strong> (Stanford University).
               </p>
             </div>
           </div>
