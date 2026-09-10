@@ -13,7 +13,7 @@ import {
 } from '../types';
 
 export const initialProfileData: ProfileData = {
-  name: 'Elango Balaji T',
+  name: 'Dr. Elango Balaji T',
   title: 'Battery Research Scientist',
   tagline: 'Operando Diagnostics · Li-S Battery Interfaces · Synchrotron Tomography · Materials Design',
   bio: 'Doctoral Researcher at the SEED Center, Taiwan Tech. Specializing in diagnosing degradation pathways and catalytic interactions within Li2S composite cathodes via multimodal in-situ/operando synchrotron imaging (TXM, XAS, HR-XRD) and spectroscopy. Developing machine learning frameworks for battery safety prediction and crafting high-impact 3D scientific visualizations.',
@@ -679,6 +679,12 @@ export const defaultEducation: EducationItem[] = [
 ];
 
 export const defaultNews: NewsItem[] = [
+  {
+    id: 'news-grad',
+    date: 'September 2026',
+    content: 'Successfully defended my Ph.D. dissertation and graduated from the SEED Center, Taiwan Tech!',
+    badge: 'Graduation',
+  },
   {
     id: 'news-1',
     date: 'March 2026',
