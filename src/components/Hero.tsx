@@ -17,6 +17,7 @@ import {
   RotateCcw,
   X,
   Folder,
+  Microscope,
 } from 'lucide-react';
 import { ProfileData } from '../types';
 
@@ -353,7 +354,12 @@ export const Hero: React.FC<HeroProps> = ({
 
               <span className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full font-medium bg-emerald-50 dark:bg-emerald-950/70 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">
                 <Award className="w-3.5 h-3.5" />
-                <span>Li-S Battery Interfaces</span>
+                <span>Operando Diagnostics</span>
+              </span>
+
+              <span className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full font-medium bg-indigo-50 dark:bg-indigo-950/70 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800">
+                <Microscope className="w-3.5 h-3.5" />
+                <span>Synchrotron based XAS/TXM</span>
               </span>
 
               <span className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full font-medium bg-purple-50 dark:bg-purple-950/70 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-800">
