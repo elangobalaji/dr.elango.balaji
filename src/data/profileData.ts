@@ -5,7 +5,6 @@ import {
   ExperienceItem,
   EducationItem,
   PublicationItem,
-  GrantItem,
   PresentationItem,
   AwardItem,
   ArticleItem,
@@ -32,12 +31,12 @@ export const initialProfileData: ProfileData = {
   stats: [
     { label: 'Publications', value: '20', description: 'In top-tier international journals' },
     { label: 'Citations', value: '950+', description: 'Across battery & materials literature' },
-    { label: 'Grant Contributions', value: 'NT$ 150M', description: 'NSTC & TW-DE bilateral funding' },
+    { label: 'Conference Talks', value: '6+', description: 'Symposia & international meetings' },
     { label: 'Beamtime Campaigns', value: 'NSRRC', description: 'TLS-16A & TPS-32A synchrotron' },
   ],
   aboutParagraphs: [
     'My core research contributions center on diagnosing degradation mechanisms in Lithium-Sulfur (Li-S) batteries and unraveling catalytic material interactions within the Li2S composite cathode. To achieve this, I pioneer multimodal in-situ and operando diagnostics—adopting synchrotron-based Transmission X-ray Microscopy (TXM), High-Resolution X-ray Diffraction (HR-XRD), X-ray Absorption Spectroscopy (XAS), Confocal Optical Microscopy/Raman, and isothermal calorimetry.',
-    'Notable outcomes include publications in flagship journals such as ACS Energy Letters, Nature Reviews, and Advanced Functional Materials, alongside a manuscript under revision at the Journal of the American Chemical Society (JACS). Furthermore, I contributed strategically to the acquisition of over NT$ 150M (€4M) in research grants through proposal architecture and scientific illustration.',
+    'Notable outcomes include publications in flagship journals such as ACS Energy Letters, Nature Reviews, and Advanced Functional Materials, alongside a manuscript under revision at the Journal of the American Chemical Society (JACS). Furthermore, I actively contribute to collaborative research initiatives through experimental design, mechanistic formulation, and scientific illustration.',
     'Alongside electrochemical characterization, I develop machine learning frameworks for predictive battery safety and failure forecasting. I also possess advanced scientific illustration expertise in Blender (3D modeling, geometry nodes, dynamic mechanism animation) and Python to translate complex multi-physics data into intuitive visuals for leadership and interdisciplinary teams.',
   ],
   principles: [
@@ -55,7 +54,7 @@ export const initialProfileData: ProfileData = {
     },
     {
       title: 'Intuitive Scientific Visualization',
-      desc: 'Translating sub-nanometer electrochemical processes into rigorous, publication-grade 3D renders in Blender for journal covers and grant proposals.',
+      desc: 'Translating sub-nanometer electrochemical processes into rigorous, publication-grade 3D renders in Blender for journal covers and scientific presentations.',
     },
   ],
 };
@@ -150,19 +149,19 @@ export const defaultProjects: Project[] = [
     title: 'Scientific 3D Illustration & Mechanism Visualization',
     tagline: 'Blender 3D, Geometry Nodes, and publication-ready cover artwork',
     description:
-      'Translating deep electrochemical processes into publication-grade 3D visuals, journal covers, and multi-million dollar grant proposal schematics.',
+      'Translating deep electrochemical processes into publication-grade 3D visuals, journal covers, and scientific schematics.',
     longDescription:
-      'Mastered Blender 3D modeling, procedural geometry nodes, and scientific animation from scratch to render atomic interfaces, synchrotron beamline setups, and ion transport mechanisms. Contributed critical visual assets that helped secure NT$ 150M (NSTC) and NT$ 27M (LiBEST³ TW-DE) in collaborative research funding.',
+      'Mastered Blender 3D modeling, procedural geometry nodes, and scientific animation from scratch to render atomic interfaces, synchrotron beamline setups, and ion transport mechanisms for high-impact research dissemination.',
     category: 'visualization',
-    tags: ['Blender 3D', 'Geometry Nodes', 'Scientific Illustration', 'Journal Covers', 'Grant Visuals'],
+    tags: ['Blender 3D', 'Geometry Nodes', 'Scientific Illustration', 'Journal Covers', 'Scientific Schematics'],
     liveUrl: 'https://github.com/elangobalaji',
     githubUrl: 'https://github.com/elangobalaji',
     featured: false,
-    metrics: 'Key visual architect for NT$ 150M NSTC and NT$ 27M LiBEST³ research grants',
+    metrics: 'Featured across peer-reviewed journals, cover arts, and technical symposiums',
     highlights: [
       'Procedural crystal lattice and nanoscale composite modeling using Blender Geometry Nodes',
       'Produced journal cover artwork candidates for top-tier energy publications',
-      'Designed technical architectural schematics for international grant proposals',
+      'Designed technical architectural schematics and mechanism diagrams for research publications',
       'Translates complex multi-physics experimental concepts into intuitive stakeholder visuals',
     ],
   },
@@ -179,12 +178,12 @@ export const defaultProjects: Project[] = [
     liveUrl: 'https://onlinelibrary.wiley.com',
     githubUrl: 'https://github.com/elangobalaji',
     featured: false,
-    metrics: '215+ citations on supercapacitor electrode review; Government of India grant funded',
+    metrics: '215+ citations on supercapacitor electrode review; Highly Cited Paper Award',
     highlights: [
       'Recovered high-purity CuO nanomaterials from discarded electronic SIM cards',
       'Synthesized bifunctional oxygen redox electrocatalyst via thermal treatment of LiCoO2',
       'Awarded "Highly Cited Paper" badge by ChemElectroChem (Wiley)',
-      'Funded by Government of India Student Project Scheme',
+      'Recognized under the Government of India Student Project Scheme',
     ],
   },
 ];
@@ -421,53 +420,6 @@ export const defaultPublications: PublicationItem[] = [
   }
 ];
 
-export const defaultGrants: GrantItem[] = [
-  {
-    id: 'grant-nstc-150m',
-    title: 'National Science and Technology Council (NSTC) Strategic Research Grant',
-    amount: 'NT$ 150M (~€4.0M)',
-    agency: 'NSTC, Taiwan',
-    role: 'Key Proposal Contributor & Scientific Visualizer',
-    description:
-      'Major research grant supporting advanced battery diagnostics, operando characterization facilities, and clean energy storage initiatives in Taiwan.',
-    details:
-      'Contributed to the successful acquisition of this landmark grant through strategic technical brainstorming, methodology formulation, and creation of publication-quality 3D scientific schematics and mechanism illustrations.',
-  },
-  {
-    id: 'grant-libest-27m',
-    title: 'LiBEST³ Taiwan-Germany Bilateral Collaborative Research Grant',
-    amount: 'NT$ 27M (~€800k)',
-    agency: 'Taiwan-Germany Bilateral Research Consortium',
-    role: 'Concept Formulator & Technical Illustrator',
-    description:
-      'International research consortium bridging top battery research groups in Taiwan and Germany, partnering with renowned battery pioneer Prof. Martin Winter.',
-    details:
-      'Formulated core scientific hypotheses, diagnostic workflows, and high-resolution technical illustrations for the joint proposal focusing on advanced lithium-sulfur and solid-state battery systems.',
-  },
-  {
-    id: 'grant-nsrrc-beamtime',
-    title: 'NSRRC Synchrotron Competitive Beamtime Allocations',
-    amount: 'Multiple Beamline Allocations',
-    agency: 'National Synchrotron Radiation Research Center (NSRRC)',
-    role: 'Lead Proposal Author & Experiment Manager',
-    description:
-      'Secured highly competitive beamtime allocations on TLS-16A (Tender X-ray) and TPS-32A (High-Energy X-ray Nanoprobe / TXM).',
-    details:
-      'Led proposal development, experimental safety protocols, custom cell integration, and high-throughput data collection campaigns for real-time operando XAS and nanoscale TXM imaging of battery electrodes.',
-  },
-  {
-    id: 'grant-india-student',
-    title: 'Government of India Student Project Scheme Research Grant',
-    amount: 'Master’s Project Funding',
-    agency: 'Tamil Nadu State Council for Science and Technology, Govt. of India',
-    role: 'Principal Student Investigator',
-    description:
-      'Competitive research grant for master’s dissertation on sustainable recovery and reuse of functional electronic waste.',
-    details:
-      'Successfully funded dissertation on the extraction, purification, and reuse of CuO from discarded SIM cards as active electrode materials for high-performance supercapacitors.',
-  },
-];
-
 export const defaultPresentations: PresentationItem[] = [
   {
     id: 'pres-nsrrc-2025',
@@ -674,7 +626,7 @@ export const defaultEducation: EducationItem[] = [
     gpa: '7.8 / 10.0',
     dissertation: 'Recovery and Reuse of CuO from SIM Cards for Supercapacitor Applications.',
     details:
-      'Awarded student research funding by the Government of India for innovative electronic waste recovery and electrochemical capacitor material synthesis.',
+      'Recognized under the student research project scheme by the Government of India for innovative electronic waste recovery and electrochemical capacitor material synthesis.',
   },
 ];
 
@@ -710,15 +662,9 @@ export const defaultNews: NewsItem[] = [
     badge: 'Preprint',
   },
   {
-    id: 'news-5',
-    date: '2024',
-    content: 'Contributed to securing competitive NT$ 150M (~€4M) research grant from the National Science and Technology Council (NSTC) Taiwan.',
-    badge: 'Grant',
-  },
-  {
     id: 'news-6',
     date: '2023',
-    content: 'Active collaborator on the Taiwan-Germany bilateral grant (LiBEST³) with Prof. Martin Winter (MEET Battery Research Center, University of Münster).',
+    content: 'Active collaborator on the Taiwan-Germany bilateral research initiative (LiBEST³) with Prof. Martin Winter (MEET Battery Research Center, University of Münster).',
     badge: 'Collaboration',
   },
 ];
@@ -746,10 +692,10 @@ export const defaultArticles: ArticleItem[] = [
     id: 'art-blender-sciviz',
     title: 'Bridging Science and Communication: Crafting 3D Nanomaterial Visualizations in Blender',
     excerpt:
-      'How battery scientists can leverage Blender Geometry Nodes and procedural texturing to render publication-worthy atomistic mechanisms for high-impact journal covers and grant proposals.',
+      'How battery scientists can leverage Blender Geometry Nodes and procedural texturing to render publication-worthy atomistic mechanisms for high-impact journal covers and scientific publications.',
     date: 'December 2024',
     readTime: '5 min read',
-    tags: ['Scientific Illustration', 'Blender 3D', 'Grant Proposals'],
+    tags: ['Scientific Illustration', 'Blender 3D', 'Scientific Art'],
   },
 ];
 

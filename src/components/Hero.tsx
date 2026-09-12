@@ -317,8 +317,7 @@ export const Hero: React.FC<HeroProps> = ({
                 To date, I have authored and co-authored <strong className="text-ink dark:text-white font-semibold">20 publications (950+ citations)</strong> in
                 high-impact journals, including <em>ACS Energy Letters</em>, <em>Nature Reviews Clean Technology</em>,{' '}
                 <em>Advanced Functional Materials</em>, and a manuscript under revision at the{' '}
-                <em>Journal of the American Chemical Society (JACS)</em>. I have also contributed strategically to
-                securing over <strong className="text-ink dark:text-white font-semibold">NT$ 150M (~€4M)</strong> in national and bilateral research grants.
+                <em>Journal of the American Chemical Society (JACS)</em>.
               </p>
 
               <p className="text-slate-700 dark:text-slate-200 text-sm sm:text-base leading-relaxed">
@@ -339,7 +338,7 @@ export const Hero: React.FC<HeroProps> = ({
               <span className="font-semibold text-ink dark:text-white">
                 International Advisory & Collaboration:{' '}
               </span>
-              Internationally advised and mentored through collaborative projects by{' '}
+              The SEED Center is supported by an international advisory board including{' '}
               <strong className="text-ink dark:text-white font-semibold">Prof. Martin Winter</strong> (MEET Battery Research Center, University of Münster, Germany),{' '}
               <strong className="text-ink dark:text-white font-semibold">Prof. A. Manthiram</strong> (University of Texas at Austin), and{' '}
               <strong className="text-ink dark:text-white font-semibold">Prof. Hongjie Dai</strong> (Stanford University).
@@ -354,7 +353,7 @@ export const Hero: React.FC<HeroProps> = ({
 
               <span className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full font-medium bg-emerald-50 dark:bg-emerald-950/70 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">
                 <Award className="w-3.5 h-3.5" />
-                <span>NT$ 150M+ Grant Contributions</span>
+                <span>Li-S Battery Interfaces</span>
               </span>
 
               <span className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full font-medium bg-purple-50 dark:bg-purple-950/70 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-800">

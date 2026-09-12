@@ -24,7 +24,6 @@ import {
   defaultExperiences,
   defaultEducation,
   defaultPublications,
-  defaultGrants,
   defaultPresentations,
   defaultAwards,
   defaultNews,
@@ -122,7 +121,6 @@ export default function App() {
                 <div className="py-8">
                   <Publications
                     publications={defaultPublications}
-                    grants={defaultGrants}
                     presentations={defaultPresentations}
                     isDark={isDark}
                   />
@@ -184,7 +182,6 @@ export default function App() {
           skills={defaultSkills}
           education={defaultEducation}
           publications={defaultPublications}
-          grants={defaultGrants}
           isDark={isDark}
         />
       </div>

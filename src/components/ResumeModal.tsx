@@ -17,7 +17,6 @@ import {
   SkillItem,
   EducationItem,
   PublicationItem,
-  GrantItem,
 } from '../types';
 
 interface ResumeModalProps {
@@ -28,7 +27,6 @@ interface ResumeModalProps {
   skills: SkillItem[];
   education: EducationItem[];
   publications?: PublicationItem[];
-  grants?: GrantItem[];
   isDark: boolean;
 }
 
@@ -40,7 +38,6 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({
   skills,
   education,
   publications = [],
-  grants = [],
   isDark,
 }) => {
   useEffect(() => {
@@ -152,8 +149,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({
               including synchrotron-based TXM, HR-XRD, XAS, Confocal OM/Raman, as well as
               electrochemical and calorimetric studies. Proven track record with 20 publications
               (950+ citations) in high-impact journals (ACS Energy Letters, Nature Reviews, Advanced
-              Functional Materials, and a manuscript under revision at JACS). Contributed to major
-              grant proposals securing over NT$ 150M. Adept at developing machine learning
+              Functional Materials, and a manuscript under revision at JACS). Adept at developing machine learning
               frameworks for battery safety predictions, and creating 3D scientific visualizations
               and animations in Blender. Supervised by Prof. Bing Joe Hwang. The SEED Center is advised
               by an international board including Prof. Martin Winter, Prof. A. Manthiram, and Prof. Hongjie Dai.
@@ -266,23 +262,6 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({
                     <span className="text-ink-soft">{pub.authors}</span>.{' '}
                     <em className="text-indigo-700 font-medium">{pub.journal}</em> ({pub.year})
                     {pub.citations && ` [${pub.citations} Citations]`}.
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Successful Grants & Proposals */}
-          {grants.length > 0 && (
-            <div>
-              <h2 className="text-xs font-bold uppercase tracking-wider text-ink border-b border-slate-300 pb-1 mb-2">
-                Successful Grants & Proposal Contributions
-              </h2>
-              <div className="space-y-1.5 text-xs">
-                {grants.map((grant) => (
-                  <div key={grant.id}>
-                    <span className="font-bold text-ink">{grant.title}</span> —{' '}
-                    <span className="font-semibold text-emerald-700">{grant.amount}</span> ({grant.agency}, {grant.period}). Role: {grant.role}.
                   </div>
                 ))}
               </div>

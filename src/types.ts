@@ -105,16 +105,6 @@ export interface PublicationItem {
   abstract?: string;
 }
 
-export interface GrantItem {
-  id: string;
-  title: string;
-  amount: string;
-  agency: string;
-  role: string;
-  description: string;
-  details: string;
-}
-
 export interface PresentationItem {
   id: string;
   title: string;

@@ -13,22 +13,20 @@ import {
   ChevronDown,
   ChevronUp,
 } from 'lucide-react';
-import { PublicationItem, GrantItem, PresentationItem } from '../types';
+import { PublicationItem, PresentationItem } from '../types';
 
 interface PublicationsProps {
   publications: PublicationItem[];
-  grants: GrantItem[];
   presentations: PresentationItem[];
   isDark: boolean;
 }
 
 export const Publications: React.FC<PublicationsProps> = ({
   publications,
-  grants,
   presentations,
   isDark,
 }) => {
-  const [activeTab, setActiveTab] = useState<'publications' | 'grants' | 'presentations'>('publications');
+  const [activeTab, setActiveTab] = useState<'publications' | 'presentations'>('publications');
   const [searchQuery, setSearchQuery] = useState('');
   const [filterLeadAuthor, setFilterLeadAuthor] = useState(false);
   const [expandedBibtex, setExpandedBibtex] = useState<string | null>(null);
@@ -112,17 +110,6 @@ export const Publications: React.FC<PublicationsProps> = ({
               }`}
             >
               Publications ({publications.length})
-            </button>
-
-            <button
-              onClick={() => setActiveTab('grants')}
-              className={`text-xl font-bold tracking-tight pb-1 border-b-2 transition-colors ${
-                activeTab === 'grants'
-                  ? 'text-terracotta dark:text-orange-400 border-terracotta dark:border-orange-400'
-                  : 'text-muted dark:text-slate-400 border-transparent hover:text-ink dark:hover:text-white'
-              }`}
-            >
-              grants ({grants.length})
             </button>
 
             <button
@@ -335,46 +322,7 @@ export const Publications: React.FC<PublicationsProps> = ({
           </div>
         )}
 
-        {/* Tab 2: Successful Grants & Proposals */}
-        {activeTab === 'grants' && (
-          <div className="space-y-4">
-            <p className="text-xs text-ink-soft dark:text-slate-400 mb-4">
-              Direct proposal architecture, mechanistic hypotheses, scientific diagrams, and experimental designs contributing to national and international research funding.
-            </p>
-
-            <div className="space-y-4">
-              {grants.map((grant) => (
-                <div
-                  key={grant.id}
-                  className={`p-4 rounded-lg border transition-colors ${
-                    isDark
-                      ? 'bg-slate-900/60 border-slate-800'
-                      : 'bg-surface border-rule'
-                  }`}
-                >
-                  <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-1">
-                    <h4 className="text-base font-bold text-ink dark:text-white">
-                      {grant.title}
-                    </h4>
-                    <span className="font-mono text-sm font-bold text-emerald-600 dark:text-emerald-400">
-                      {grant.amount}
-                    </span>
-                  </div>
-
-                  <div className="text-xs text-terracotta dark:text-blue-400 font-medium mb-2">
-                    {grant.agency} · {grant.period} · Role: {grant.role}
-                  </div>
-
-                  <p className="text-xs sm:text-sm text-ink-soft dark:text-slate-200 leading-relaxed">
-                    {grant.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* Tab 3: Conference Presentations */}
+        {/* Tab 2: Conference Presentations */}
         {activeTab === 'presentations' && (
           <div className="space-y-4">
             <p className="text-xs text-ink-soft dark:text-slate-300 mb-4">
