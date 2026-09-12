@@ -79,11 +79,11 @@ export const Publications: React.FC<PublicationsProps> = ({
 
   // Highlight user's name in author strings
   const formatAuthors = (authorsStr: string) => {
-    const parts = authorsStr.split(/(Dr\. Elango Balaji T|Elango Balaji T|Balaji, E\.|E\. Balaji|Elango Balaji)/gi);
+    const parts = authorsStr.split(/(Dr\. Elango Balaji T|Elango Balaji Tamilarasan|Tamilarasan, Elango Balaji|Tamilarasan Elango Balaji|Elango Balaji, T\.|Balaji, T\. Elango|T\. Elango Balaji|Elango Balaji T|Balaji, E\.|E\. Balaji|Elango Balaji)/gi);
     return (
       <>
         {parts.map((part, i) =>
-          /^(Dr\. Elango Balaji T|Elango Balaji T|Balaji, E\.|E\. Balaji|Elango Balaji)$/i.test(part) ? (
+          /^(Dr\. Elango Balaji T|Elango Balaji Tamilarasan|Tamilarasan, Elango Balaji|Tamilarasan Elango Balaji|Elango Balaji, T\.|Balaji, T\. Elango|T\. Elango Balaji|Elango Balaji T|Balaji, E\.|E\. Balaji|Elango Balaji)$/i.test(part) ? (
             <strong key={i} className="text-ink dark:text-white font-semibold underline decoration-blue-500/50">
               {part}
             </strong>
